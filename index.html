@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang='zh-CN'>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="DRBD,弹丸论破,danganronpa,同人,游戏,rpg">
+		<meta name="description" content="DRBD 弹丸论破同人游戏发布页">
+		<title>DRBD 弹丸论破同人游戏发布页</title>
+		<script src="script/vue.js" type="text/javascript" charset="UTF-8"></script>
+		<link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.compat.css" rel="stylesheet">
+		<link href="index.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://kit.fontawesome.com/6861b7b8a4.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<!--info>这里插一句广告应该没人看见吧……欢迎访问[sea.rpgca.tk]</!-->
+
+		<div id="vm"  style="padding-left: 20px;padding-right: 20px;background-color: #e1ff76;">
+			<el-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
+   				<div style="{
+        				height: 100%;
+  				        width: 100%;
+   					background-color: #f2f5f6;
+        				box-shadow: 0 0 6px rgba(0,0,0, .12);
+        				text-align: center;
+       					line-height: 40px;
+       					color: #1989fa;
+      					}"
+    					>
+      					顶部
+    				</div>
+			</el-backtop>
+			<br>
+			<div>
+				<div class="demo-image__placeholder">
+					<div class="block">
+						<el-image :src="top_img_scr">
+							<div slot="placeholder" class="image-slot">
+								加载中<span class="dot">...</span>
+							</div>
+						</el-image>
+					</div>
+				</div>
+			</div>
+			<div>
+				<template>
+
+					<el-divider content-position="left">开始游戏 (版本{{ver_num}})</el-divider>
+
+					<!--info>这里快速开始游戏</!-->
+
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>在线网页游戏</span>
+						</div>
+
+						<div class="text item">
+
+							<el-row>
+								<el-col :span="20">
+
+									<span>不推荐使用流量进入<strong>右边的链接[game.drbd.tk]</strong>请认真阅读我们的在线游戏条例</span>
+
+								</el-col>
+								<el-col :span="4">
+
+									<el-divider direction="vertical"></el-divider>
+									<el-tooltip class="item" effect="dark" content="点我！点我！" placement="top">
+										<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
+									</el-tooltip>
+
+									<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="80%"
+										:before-close="handleClose">
+										<span>
+											<ul>
+												<li>1.本游戏静止二改与商用.</li><br>
+												<li>2.本游戏<strong>适龄年龄14+</strong>，请低龄玩家在监护人的陪同下游玩</li><br>
+												<li>3.本游戏世界观比较<strong>神奇</strong>，请尽量控制好情绪.</li><br>
+												<li>4.请适度游玩，勿沉迷、勿疲劳，健康游戏.</li><br>
+												<li>5.本游戏可以录屏，但不允许任何形式的恶意破解、盗图、网络攻击.</li><br>
+												<li>6.本游戏<strong>容量较大</strong>，不建议在流量环境下进入.</li><br>
+												<li>6.如有Bug反馈或其他问题，请联系站长邮箱<a href="mail@drbd.tk">mail@drbd.tk</a>.</li>
+												<br>
+											</ul>
+										</span>
+										<span slot="footer" class="dialog-footer">
+											<el-button @click="dialogVisible = false">取 消</el-button>
+											<a href="https://game.drbd.tk"><el-tooltip class="item" effect="dark" content="真的好好看了吗？" placement="top">
+												<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+											</el-tooltip></a>
+										</span>
+
+									</el-dialog>
+
+								</el-col>
+							</el-row>
+
+						</div>
+					</el-card>
+					<br>
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>离线安装版</span>
+						</div>
+
+						<div class="text item">
+
+							<el-row>
+								<el-col :span="20">
+
+									<span>支持系统<strong>[请到具体页面查看]</strong>请按照安装程序指示完成安装</span>
+
+								</el-col>
+								<el-col :span="4">
+
+									<el-divider direction="vertical"></el-divider>
+									<a href="https://download.drbd.tk">
+										<el-tooltip class="item" effect="dark" content="点我！点我！" placement="top">
+											<el-button type="primary" plain>前去下载</el-button>
+										</el-tooltip>
+									</a>
+
+								</el-col>
+							</el-row>
+
+						</div>
+					</el-card>
+
+					<el-divider content-position="left">游戏介绍</el-divider>
+
+					<!--info>这里开始游戏介绍</!-->
+
+					<div class="text item">
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>公告</span>
+							</div>
+
+							<div class="text item">
+
+								<el-row>
+									<el-col :span="10">
+
+										<span>
+											<template>
+												<div class="demo-image__placeholder">
+													<div class="block">
+														<el-image :src="hot_img_scr">
+															<div slot="placeholder" class="image-slot">
+																加载中<span class="dot">...</span>
+															</div>
+														</el-image>
+													</div>
+												</div>
+											</template>
+										</span>
+
+									</el-col>
+									<el-col :span="14">
+										<!--这里插入公告-->
+										啊哈哈哈，催逝员来喽~
+
+									</el-col>
+								</el-row>
+
+							</div>
+						</el-card>
+						<br>
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>游戏介绍</span>
+							</div>
+
+
+					</div>
+					</el-card>
+					<br>
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>简介</span>
+						</div>
+
+						<div class="text item">
+
+							<span>
+								啊呀，简介不见了？！
+							</span>
+
+						</div>
+					</el-card>
+					<br>
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>联系方式</span>
+						</div>
+
+						<div class="text item">
+
+
+							<el-row>
+								<el-col :span="12">
+									站长邮箱
+								</el-col>
+								<el-col :span="12"><el-tooltip class="item" effect="dark" content="站长的邮箱 也许可以用来……" placement="top"><el-link type="primary"
+										href="https://mail@drbd.tk"><i class="el-icon-message"></i>rpgca@qq.com</el-link>
+								</el-col>
+							</el-row>
+							<br>
+							<el-row>
+								<el-col :span="12">
+									QQ聊天群
+								</el-col>
+								<el-col :span="12"><el-tooltip class="item" effect="dark" content="快来加群畅聊吧！" placement="top"><el-link type="primary"
+										href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu"><i
+											class="el-icon-user"></i>571655864 </el-link>
+								</el-col>
+							</el-row>
+							<br>
+							<el-row>
+								<el-col :span="12">
+									github站点
+								</el-col>
+								<el-col :span="12"><el-tooltip class="item" effect="dark" content="这里会有什么小秘密呢？" placement="top"><el-link type="primary"
+										href="https://github.com/ShrLeeKNsword/drbd_index"><i
+											class="el-icon-collection"></i>点击跳转 </el-link">
+								</el-col>
+							</el-row>
+
+						</div>
+					</el-card>
+					<br>
+
+				</template>
+			</div>
+		</div>
+		
+
+		<script type="text/javascript">
+			var data = {
+				ver_num: '0.0.0',
+				top_img_scr: 'img/top.png',
+				hot_img_scr: 'img/hot.png',
+				dialogVisible: false,
+				item: 0
+			};
+			
+			var vm = new Vue({
+				el: '#vm',
+				data: data,
+				methods: {
+					handleClose(done) {
+						this.$confirm('确认关闭？')
+							.then(_ => {
+								done();
+							})
+							.catch(_ => {});
+					}
+				}
+
+			});
+		</script>
+	</body>
+</html>
