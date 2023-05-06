@@ -115,29 +115,75 @@
 									希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持。<br>
 								</span>
 							</div>
-							
+
 						</el-card>
 						<br>
-						<el-card class="box-card">
+
+						<el-card class="box-card bubbles-background">
 							<div slot="header" class="clearfix">
-								<span>简介</span>
+								<span style="font-size: 30px;"><i class="el-icon-picture-outline-round"></i> 画师介绍</span>
 							</div>
 
 							<div class="text item">
-
-								<span>
-									啊呀，简介不见了？！
+								<span style="font-size: 20px;">
+									暂无介绍内容捏……
 								</span>
 
 							</div>
 						</el-card>
 						<br>
+
+						<el-card class="box-card current-background">
+							<div slot="header" class="clearfix">
+								<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
+							</div>
+
+							<div class="text item">
+								<div>
+									<div class="demo-image__placeholder">
+										<div class="block">
+											<div class="block">
+												<el-carousel height="400px" type="card">
+													<el-carousel-item style="text-align: center;margin:0 auto;"
+														v-for="item in top_img_list" :key="item.id">
+														<el-image :src="item.idView">
+															<div slot="error" class="image-slot">
+																<i class="el-icon-picture-outline"></i>
+														</el-image>
+													</el-carousel-item>
+												</el-carousel>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</el-card>
+						<br>
+
+
+						<el-card class="box-card signal-background">
+							<div slot="header" class="clearfix">
+								<span style="font-size: 30px;"><i class="el-icon-goods"></i> 敬请期待</span>
+							</div>
+
+							<div class="text item">
+								<span style="font-size: 20px;">
+									后续会开通众筹渠道。另有特典及订制礼品赠送，还请多多支持。<br>
+									我们绝对会以制作出优秀游戏的初心出发，排除一切困难，力争带给玩家一个美好体验。<br>
+									如果有任何想法可随时联系我们。<br>
+									我们欢迎任何对游戏制作有技术有能力的合作伙伴加入。
+								</span>
+
+							</div>
+						</el-card>
+						<br>
+
 						<el-card class="box-card">
 							<div slot="header" class="clearfix">
 								<span style="font-size: 30px;"><i class="el-icon-star-off"></i> 联系方式</span>
 							</div>
 
-							<div class="text item"  style="padding-left: 10%;padding-right: 40%;font-size: 20px;">
+							<div class="text item" style="padding-left: 10%;padding-right: 40%;font-size: 20px;">
 
 
 								<el-row>
@@ -145,7 +191,8 @@
 										总策划QQ
 									</el-col>
 									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我直接加好友!"
-											placement="top"><el-link type="primary" href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><i
+											placement="top"><el-link type="primary"
+												href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><i
 													class="el-icon-user"></i>2862824043</el-link>
 									</el-col>
 								</el-row>
