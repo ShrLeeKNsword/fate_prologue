@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang='zh-CN'>
 	<head>
@@ -8,148 +7,70 @@
 		<title>梦之彼方-fate prologue</title>
 		<script src="script/vue.js" type="text/javascript" charset="UTF-8"></script>
 		<link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.compat.css" rel="stylesheet">
-		<link href="index.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 		<script src="https://kit.fontawesome.com/6861b7b8a4.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
-	<body>
+	<body style="min-width: 800px;">
 		<!--info>这里插一句广告应该没人看见吧……欢迎访问！</!-->
 
-		<div id="vm"  style="padding-left: 20px;padding-right: 20px;background-color: #eeeeee;">
-			<el-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
-   				<div style="{
-        				height: 100%;
-  				        width: 100%;
-   					background-color: #f2f5f6;
-        				box-shadow: 0 0 6px rgba(0,0,0, .12);
-        				text-align: center;
-       					line-height: 40px;
-       					color: #1989fa;
-      					}"
-    					>
-      					顶部
-    				</div>
-			</el-backtop>
+		<div id="vm" class="architect-background" style="padding-left: 30px;padding-right: 30px;">
 			<br>
 			<div>
 				<div class="demo-image__placeholder">
 					<div class="block">
-						<el-image :src="top_img_scr">
-							<div slot="placeholder" class="image-slot">
-								加载中<span class="dot">...</span>
-							</div>
-						</el-image>
+						<div class="block">
+							<el-carousel height="400px">
+								<el-carousel-item style="text-align: center;margin:0 auto;" v-for="item in top_img_list"
+									:key="item.id">
+									<el-image :src="item.idView">
+										<div slot="error" class="image-slot">
+											<i class="el-icon-picture-outline"></i>
+									</el-image>
+								</el-carousel-item>
+							</el-carousel>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div>
 				<template>
-
-					<el-divider content-position="left">开始游戏 (版本{{ver_num}})</el-divider>
-
-					<!--info>这里快速开始游戏</!-->
-
-					<el-card class="box-card">
+					<el-card class="box-card puzzle-background">
 						<div slot="header" class="clearfix">
-							<span>在线网页游戏</span>
+							<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 简介</span>
 						</div>
 
 						<div class="text item">
-
-							<el-row>
-								<el-col :span="20">
-
-									<span>不推荐使用流量进入<strong>右边的链接[game.drbd.tk]</strong>请认真阅读我们的在线游戏条例</span>
-
-								</el-col>
-								<el-col :span="4">
-
-									<el-divider direction="vertical"></el-divider>
-									<el-tooltip class="item" effect="dark" content="点我！点我！" placement="top">
-										<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
-									</el-tooltip>
-
-									<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="80%"
-										:before-close="handleClose">
-										<span>
-											<ul>
-												<li>1.本游戏静止二改与商用.</li><br>
-												<li>2.本游戏<strong>适龄年龄14+</strong>，请低龄玩家在监护人的陪同下游玩</li><br>
-												<li>3.本游戏世界观比较<strong>神奇</strong>，请尽量控制好情绪.</li><br>
-												<li>4.请适度游玩，勿沉迷、勿疲劳，健康游戏.</li><br>
-												<li>5.本游戏可以录屏，但不允许任何形式的恶意破解、盗图、网络攻击.</li><br>
-												<li>6.本游戏<strong>容量较大</strong>，不建议在流量环境下进入.</li><br>
-												<li>6.如有Bug反馈或其他问题，请联系站长邮箱<a href="mail@drbd.tk">mail@drbd.tk</a>.</li>
-												<br>
-											</ul>
-										</span>
-										<span slot="footer" class="dialog-footer">
-											<el-button @click="dialogVisible = false">取 消</el-button>
-											<a href="https://game.drbd.tk"><el-tooltip class="item" effect="dark" content="真的好好看了吗？" placement="top">
-												<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-											</el-tooltip></a>
-										</span>
-
-									</el-dialog>
-
-								</el-col>
-							</el-row>
-
+							<span
+								style="font-size: 18px;">“一位名叫蓝原逸的少年，在多年之后重返家乡，转入了小镇唯一的学校，八年的时光，小镇的一切已经发生了翻天覆地的变化，那些遗失的美好，珍贵的回忆，慢慢苏醒……这就是所谓的奇迹吗？男孩显的有些疑惑。此后，他与自己的青梅竹马相逢，结识了文学部的众人，开始了一日日平凡的校园时光……”她，如此这样的说着。</span>
 						</div>
 					</el-card>
-					<br>
-					<el-card class="box-card">
-						<div slot="header" class="clearfix">
-							<span>离线安装版</span>
-						</div>
-
-						<div class="text item">
-
-							<el-row>
-								<el-col :span="20">
-
-									<span>支持系统<strong>[请到具体页面查看]</strong>请按照安装程序指示完成安装</span>
-
-								</el-col>
-								<el-col :span="4">
-
-									<el-divider direction="vertical"></el-divider>
-									<a href="https://download.drbd.tk">
-										<el-tooltip class="item" effect="dark" content="点我！点我！" placement="top">
-											<el-button type="primary" plain>前去下载</el-button>
-										</el-tooltip>
-									</a>
-
-								</el-col>
-							</el-row>
-
-						</div>
-					</el-card>
-
 					<el-divider content-position="left">游戏介绍</el-divider>
 
 					<!--info>这里开始游戏介绍</!-->
 
 					<div class="text item">
-						<el-card class="box-card">
+						<el-card class="box-card line-background">
 							<div slot="header" class="clearfix">
-								<span>公告</span>
+								<span style="font-size: 30px;"><i class="el-icon-user"></i> STAFF</span>
 							</div>
 
 							<div class="text item">
 
 								<el-row>
-									<el-col :span="10">
+									<el-col :span="12">
 
 										<span>
 											<template>
-												<div class="demo-image__placeholder">
+												<div class="demo-image__placeholder"
+													style="margin: 8px 10px 10px 10px;">
 													<div class="block">
-														<el-image :src="hot_img_scr">
-															<div slot="placeholder" class="image-slot">
-																加载中<span class="dot">...</span>
+														<el-image :src="discribe_scr"
+															style="box-shadow:5px 3px 5px black;border-radius: 5px 5px 5px 5px;">
+															<div slot="error" class="image-slot">
+																<i class="el-icon-picture-outline"></i>
 															</div>
 														</el-image>
 													</div>
@@ -158,9 +79,22 @@
 										</span>
 
 									</el-col>
-									<el-col :span="14">
+									<el-col :span="12" style="padding-left: 60px;padding-right: 5px;">
 										<!--这里插入公告-->
-										啊哈哈哈，催逝员来喽~
+										<span style="font-size: 25px;"><strong>制作组</strong></span><br>
+										<span style="font-size: 20px;">梦魂社：Dream soul society</span><br>
+										<br>
+										<span style="font-size: 20px;">制作中ing</span><br>
+										星豆まな：pixivID103523<br>
+										sironora：pixivID13000627<br>
+										Azel：pixivID2416323<br>
+										<span style="font-size: 20px;">另外，还有本组主美及其他美术等。</span><br>
+										<span style="font-size: 20px;">未来合作可能：</span><br>
+										しろきもち：pixivID31659436<br>
+										ほし：pixivID1198913<br>
+										塩かずのこ：pixivID4310379<br>
+
+
 
 									</el-col>
 								</el-row>
@@ -168,97 +102,124 @@
 							</div>
 						</el-card>
 						<br>
-						<el-card class="box-card">
+						<el-card class="box-card stripes-background">
 							<div slot="header" class="clearfix">
-								<span>游戏介绍</span>
+								<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i> 特别声明</span>
 							</div>
 
+							<div class="text item">
+								<span style="font-size: 20px;">
+									本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联。<br>
+									本作品所有出场角色均已年满18周岁。<br>
+									本作还将在制作完成后开放同人二次创作权限。<br>
+									可免费使用公布的人物立绘和音乐等内容。（但商用仍需另外沟通哦~）<br>
+									希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持。<br>
+								</span>
+							</div>
+							
+						</el-card>
+						<br>
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>简介</span>
+							</div>
 
-					</div>
-					</el-card>
-					<br>
-					<el-card class="box-card">
-						<div slot="header" class="clearfix">
-							<span>简介</span>
-						</div>
+							<div class="text item">
 
-						<div class="text item">
+								<span>
+									啊呀，简介不见了？！
+								</span>
 
-							<span>
-								啊呀，简介不见了？！
-							</span>
+							</div>
+						</el-card>
+						<br>
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span style="font-size: 30px;">联系方式</span>
+							</div>
 
-						</div>
-					</el-card>
-					<br>
-					<el-card class="box-card">
-						<div slot="header" class="clearfix">
-							<span>联系方式</span>
-						</div>
-
-						<div class="text item">
+							<div class="text item"  style="padding-left: 10%;padding-right: 40%;font-size: 20px;">
 
 
-							<el-row>
-								<el-col :span="12">
-									站长邮箱
-								</el-col>
-								<el-col :span="12"><el-tooltip class="item" effect="dark" content="站长的邮箱 也许可以用来……" placement="top"><el-link type="primary"
-										href="https://mail@drbd.tk"><i class="el-icon-message"></i>rpgca@qq.com</el-link>
-								</el-col>
-							</el-row>
-							<br>
-							<el-row>
-								<el-col :span="12">
-									QQ聊天群
-								</el-col>
-								<el-col :span="12"><el-tooltip class="item" effect="dark" content="快来加群畅聊吧！" placement="top"><el-link type="primary"
-										href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu"><i
-											class="el-icon-user"></i>571655864 </el-link>
-								</el-col>
-							</el-row>
-							<br>
-							<el-row>
-								<el-col :span="12">
-									github站点
-								</el-col>
-								<el-col :span="12"><el-tooltip class="item" effect="dark" content="这里会有什么小秘密呢？" placement="top"><el-link type="primary"
-										href="https://github.com/ShrLeeKNsword/drbd_index"><i
-											class="el-icon-collection"></i>点击跳转 </el-link">
-								</el-col>
-							</el-row>
+								<el-row>
+									<el-col :span="12">
+										总策划QQ
+									</el-col>
+									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我直接加好友!"
+											placement="top"><el-link type="primary" href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><i
+													class="el-icon-user"></i>2862824043</el-link>
+									</el-col>
+								</el-row>
+								<br>
+								<el-row>
+									<el-col :span="12">
+										总策划邮箱
+									</el-col>
+									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我发送邮件!"
+											placement="top"><el-link type="primary" href="mailto:2862824043@qq.com"><i
+													class="el-icon-message"></i>2862824043@qq.com</el-link>
+									</el-col>
+								</el-row>
+								<br>
+								<el-row>
+									<el-col :span="12">
+										QQ聊天群
+									</el-col>
+									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我加群畅聊吧"
+											placement="top"><el-link type="primary"
+												href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=R20jFb406Egm1dTHeff_dmfnZ_40nIi8&noverify=0&group_code=226995538"><i
+													class="el-icon-user"></i>226995538 </el-link>
+									</el-col>
+								</el-row>
+								<br>
+								<el-row>
+									<el-col :span="12">
+										B站主页
+									</el-col>
+									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我前往B站主页!"
+											placement="top"><el-link type="primary"
+												href="https://space.bilibili.com/16531901"><i
+													class="el-icon-discover"></i>点击跳转 </el-link>
+									</el-col>
+								</el-row>
 
-						</div>
-					</el-card>
-					<br>
+							</div>
+						</el-card>
+						<br>
 
 				</template>
 			</div>
 		</div>
-		
+
 
 		<script type="text/javascript">
 			var data = {
 				ver_num: '0.0.0',
-				top_img_scr: 'img/top.png',
-				hot_img_scr: 'img/hot.png',
+				top_img_list: [{
+						id: 1,
+						idView: 'img/top_1.png'
+					},
+					{
+						id: 2,
+						idView: 'img/top_2.png'
+					},
+					{
+						id: 3,
+						idView: 'img/top_3.png'
+					},
+					{
+						id: 4,
+						idView: 'img/top_4.png'
+					}
+				],
+				discribe_scr: 'img/discribe.png',
 				dialogVisible: false,
 				item: 0
 			};
-			
+
 			var vm = new Vue({
 				el: '#vm',
 				data: data,
-				methods: {
-					handleClose(done) {
-						this.$confirm('确认关闭？')
-							.then(_ => {
-								done();
-							})
-							.catch(_ => {});
-					}
-				}
-
 			});
 		</script>
 	</body>
