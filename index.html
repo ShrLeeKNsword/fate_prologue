@@ -140,12 +140,15 @@
 
 							<div class="text item">
 								<div>
+									<span style="font-size: 20px;">
+										<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。
+									</span>
 									<div class="demo-image__placeholder">
 										<div class="block">
 											<div class="block">
 												<el-carousel height="400px" type="card">
 													<el-carousel-item style="text-align: center;margin:0 auto;"
-														v-for="item in top_img_list" :key="item.id">
+														v-for="item in chr_img_list" :key="item.id">
 														<el-image :src="item.idView">
 															<div slot="error" class="image-slot">
 																<i class="el-icon-picture-outline"></i>
@@ -256,6 +259,31 @@
 					{
 						id: 4,
 						idView: 'img/top_4.png'
+					}
+				],
+				chr_img_list: [{
+						id: 1,
+						idView: 'img/character/01.png'
+					},
+					{
+						id: 2,
+						idView: 'img/character/02.png'
+					},
+					{
+						id: 3,
+						idView: 'img/character/03.png'
+					},
+					{
+						id: 4,
+						idView: 'img/character/04.png'
+					},
+					{
+						id: 5,
+						idView: 'img/character/05.png'
+					},
+					{
+						id: 6,
+						idView: 'img/character/06.png'
 					}
 				],
 				discribe_scr: 'img/discribe.png',
