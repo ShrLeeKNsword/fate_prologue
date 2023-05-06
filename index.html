@@ -143,27 +143,38 @@
 									<span style="font-size: 20px;">
 										<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
 										<i class="el-icon-info"></i> 请点击图片以查看角色详情。
-									</span>									
-									<div class="demo-image__placeholder">
-										<div class="block">
+									</span>
+									<template>
+										<div class="demo-image__placeholder">
 											<div class="block">
-												<el-carousel height="400px" type="card">
-													<el-carousel-item style="text-align: center;margin:0 auto;"
-														v-for="item in chr_img_list" :key="item.id">
-														<el-image :src="item.idView">
-															<div slot="error" class="image-slot">
-																<i class="el-icon-picture-outline"></i>
-														</el-image>
-													</el-carousel-item>
-												</el-carousel>
+												<div class="block">
+													<el-carousel height="400px" type="card">
+														<el-carousel-item style="text-align: center;margin:0 auto;"
+															v-for="item in chr_img_list" :key="item.id">
+															<el-image :src="item.idView"  @click="centerDialogVisible = true,presentID = item.id - 1">
+																<div slot="error" class="image-slot">
+																	<i class="el-icon-picture-outline"></i>
+																</div>
+															</el-image>
+														</el-carousel-item>
+													</el-carousel>
+												</div>
 											</div>
 										</div>
-									</div>
+									</template>
 								</div>
 							</div>
 						</el-card>
 						<br>
 
+						<el-dialog title="提示" :visible.sync="centerDialogVisible" width="80%" center>
+							<span>{{presentID}}</span>
+							<el-image :src="chr_img_list[presentID].idView">
+									<div slot="error" class="image-slot">
+										<i class="el-icon-picture-outline"></i>
+									</div>
+								</el-image>
+						</el-dialog>
 
 						<el-card class="box-card signal-background">
 							<div slot="header" class="clearfix">
@@ -288,7 +299,8 @@
 					}
 				],
 				discribe_scr: 'img/discribe.png',
-				dialogVisible: false,
+				centerDialogVisible: false,
+				presentID: 0,
 				item: 0
 			};
 
@@ -296,6 +308,7 @@
 				el: '#vm',
 				data: data,
 			});
+			
 		</script>
 	</body>
 </html>
