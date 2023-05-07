@@ -5,7 +5,7 @@ var data = $.parseJSON($.ajax({
 }).responseText);
 console.log(data);
 
-
+data.date = new Date()
 
 var vm = new Vue({
 	el: '#vm',

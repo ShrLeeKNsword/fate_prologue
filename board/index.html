@@ -59,58 +59,19 @@
 							<span style="font-size: 18px;"></span>
 						</div>
 					</el-card>
-					<el-divider id="note_1" content-position="left">游戏介绍</el-divider>
+					<br>
 
 					<!--info>这里开始游戏介绍</!-->
 
 					<div class="text item">
 						<el-card class="box-card line-background">
 							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-user"></i> STAFF</span>
+								<span style="font-size: 30px;"><i class="el-icon-user"></i> 历史发展</span>
 							</div>
 
 							<div class="text item">
-
-								<el-row>
-									<el-col :span="12">
-
-										<span>
-											<template>
-												<div class="demo-image__placeholder"
-													style="margin: 8px 10px 10px 10px;">
-													<div class="block">
-														<el-image :src="discribe_scr"
-															style="box-shadow:5px 3px 5px black;border-radius: 5px 5px 5px 5px;">
-															<div slot="error" class="image-slot">
-																<i class="el-icon-picture-outline"></i>
-															</div>
-														</el-image>
-													</div>
-												</div>
-											</template>
-										</span>
-
-									</el-col>
-									<el-col :span="12" style="padding-left: 60px;padding-right: 5px;">
-										<!--这里插入公告-->
-										<span style="font-size: 25px;"><strong>制作组</strong></span><br>
-										<span style="font-size: 20px;">梦魂社：Dream soul society</span><br>
-										<br>
-										<span style="font-size: 20px;">制作中ing</span><br>
-										星豆まな：pixivID103523<br>
-										sironora：pixivID13000627<br>
-										Azel：pixivID2416323<br>
-										<span style="font-size: 20px;">另外，还有本组主美及其他美术等。</span><br>
-										<span style="font-size: 20px;">未来合作可能：</span><br>
-										しろきもち：pixivID31659436<br>
-										ほし：pixivID1198913<br>
-										塩かずのこ：pixivID4310379<br>
-
-
-
-									</el-col>
-								</el-row>
-
+								<el-calendar v-model="date">
+								</el-calendar>
 							</div>
 						</el-card>
 						<br>
