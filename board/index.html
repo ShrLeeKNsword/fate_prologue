@@ -19,14 +19,7 @@
 
 		<div id="vm" class="architect-background" style="padding-left: 30px;padding-right: 30px;">
 
-			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-				background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-				<el-menu-item>梦之彼方</el-menu-item>
-				<el-menu-item @click="highlight_b">作品介绍</el-menu-item>
-				<el-menu-item @click="highlight_c">画师详情</el-menu-item>
-				<el-menu-item @click="highlight_d">支持我们</el-menu-item>
-			</el-menu>
-
+			<el-page-header @back="goBack" content="公告板"></el-page-header>
 
 			<br>
 			<div>
@@ -289,8 +282,8 @@
 				</template>
 			</div>
 		</div>
-		
+
 		<script src="script/index.js" type="text/javascript"></script>
-		
+
 	</body>
 </html>

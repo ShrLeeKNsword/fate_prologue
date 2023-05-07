@@ -11,6 +11,9 @@ var vm = new Vue({
 	el: '#vm',
 	data: data,
 	methods: {
+		goBack() {
+			this.$router.go(-1)
+		},
 		highlight_b() {
 			// id 在当前页面必须唯一的，否则会导致定位不到具体内容
 			const scrollDom = document.getElementById("note_1");
