@@ -6,6 +6,7 @@
 		<meta name="description" content="">
 		<title>梦之彼方-fate prologue</title>
 		<script src="script/vue.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.compat.css" rel="stylesheet">
 		<link href="css/index.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -289,8 +290,8 @@
 			</div>
 		</div>
 
-
 		<script type="text/javascript">
+			/*
 			var data = {
 				ver_num: '0.0.0',
 				activeIndex: '1',
@@ -439,6 +440,17 @@
 				presentID: 0,
 				item: 0
 			};
+			*/
+
+			
+			var data =  $.parseJSON($.ajax({
+			            url: "data.json",//json文件位置，文件名
+			            dataType: "json", //返回数据格式为json
+			            async: false
+			        }).responseText);
+			        console.log(data);
+			
+
 
 			var vm = new Vue({
 				el: '#vm',
