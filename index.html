@@ -17,16 +17,16 @@
 
 
 		<div id="vm" class="architect-background" style="padding-left: 30px;padding-right: 30px;">
-			
+
 			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
 				background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-				<el-menu-item index="1">梦之彼方</el-menu-item>
-				<el-menu-item index="2">作品介绍</el-menu-item>
-				<el-menu-item index="3">画师详情</el-menu-item>
-				<el-menu-item index="4">支持我们</el-menu-item>
+				<el-menu-item>梦之彼方</el-menu-item>
+				<el-menu-item @click="highlight_b">作品介绍</el-menu-item>
+				<el-menu-item @click="highlight_c">画师详情</el-menu-item>
+				<el-menu-item @click="highlight_d">支持我们</el-menu-item>
 			</el-menu>
-			
-			
+
+
 			<br>
 			<div>
 				<div class="demo-image__placeholder">
@@ -57,7 +57,7 @@
 								style="font-size: 18px;">“一位名叫蓝原逸的少年，在多年之后重返家乡，转入了小镇唯一的学校，八年的时光，小镇的一切已经发生了翻天覆地的变化，那些遗失的美好，珍贵的回忆，慢慢苏醒……这就是所谓的奇迹吗？男孩显的有些疑惑。此后，他与自己的青梅竹马相逢，结识了文学部的众人，开始了一日日平凡的校园时光……”她，如此这样的说着。</span>
 						</div>
 					</el-card>
-					<el-divider content-position="left">游戏介绍</el-divider>
+					<el-divider id="note_1" content-position="left">游戏介绍</el-divider>
 
 					<!--info>这里开始游戏介绍</!-->
 
@@ -130,7 +130,7 @@
 						</el-card>
 						<br>
 
-						<el-card class="box-card bubbles-background">
+						<el-card id="note_2" class="box-card bubbles-background">
 							<div slot="header" class="clearfix">
 								<span style="font-size: 30px;"><i class="el-icon-picture-outline-round"></i> 画师介绍</span>
 							</div>
@@ -213,7 +213,7 @@
 							</el-row>
 						</el-dialog>
 
-						<el-card class="box-card signal-background">
+						<el-card id="note_3" class="box-card signal-background">
 							<div slot="header" class="clearfix">
 								<span style="font-size: 30px;"><i class="el-icon-goods"></i> 敬请期待</span>
 							</div>
@@ -444,6 +444,23 @@
 				el: '#vm',
 				data: data,
 				methods: {
+					highlight_b() {
+						// id 在当前页面必须唯一的，否则会导致定位不到具体内容
+						const scrollDom = document.getElementById("note_1");
+						scrollDom.scrollIntoView();
+					},
+					highlight_c() {
+						// id 在当前页面必须唯一的，否则会导致定位不到具体内容
+						const scrollDom = document.getElementById("note_2");
+						scrollDom.scrollIntoView();
+					},
+					highlight_d() {
+						// id 在当前页面必须唯一的，否则会导致定位不到具体内容
+						const scrollDom = document.getElementById("note_3");
+						scrollDom.scrollIntoView();
+					},
+
+
 					handleSelect(key, keyPath) {
 						console.log(key, keyPath);
 					}
