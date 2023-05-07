@@ -50,7 +50,7 @@
 						</div>
 
 						<div class="text item">
-							<el-table :data="newsTableData" style="width: 100%">
+							<el-table :data="newsTableData" :default-sort = "{prop: 'date', order: 'descending'}" height="200" style="width: 100%">
 								<el-table-column prop="date" label="日期" width="200">
 								</el-table-column>
 								<el-table-column prop="guide" label="摘要">
