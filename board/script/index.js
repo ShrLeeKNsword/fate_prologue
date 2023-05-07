@@ -12,7 +12,7 @@ var vm = new Vue({
 	data: data,
 	methods: {
 		goBack() {
-			this.$router.go(-1)
+			window.location.href="https://fate-prologue.41workroom.tk/";
 		},
 		highlight_b() {
 			// id 在当前页面必须唯一的，否则会导致定位不到具体内容

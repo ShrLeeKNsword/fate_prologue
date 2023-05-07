@@ -17,16 +17,19 @@
 		<!--info>这里插一句广告应该没人看见吧……欢迎前来了解海口龙华番石榴网络科技工作室！！</!-->
 
 
-		<div id="vm" class="architect-background" style="padding-left: 30px;padding-right: 30px;">
+		<div id="vm" class="architect-background" style="padding-left: 30px;padding-right: 30px;padding-top: 30px;">
 
-			<el-page-header @back="goBack" content="公告板"></el-page-header>
+			<el-page-header @back="goBack" content="公告板"
+				style="width: 100%;padding: 10px 10px 10px 10px;font-size: 30px;">
+			</el-page-header>
+			<el-divider></el-divider>
 
 			<br>
 			<div>
 				<div class="demo-image__placeholder">
 					<div class="block">
 						<div class="block">
-							<el-carousel height="400px">
+							<el-carousel height="300px">
 								<el-carousel-item style="text-align: center;margin:0 auto;" v-for="item in top_img_list"
 									:key="item.id">
 									<el-image :src="item.idView">
@@ -43,12 +46,17 @@
 				<template>
 					<el-card class="box-card puzzle-background">
 						<div slot="header" class="clearfix">
-							<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 简介</span>
+							<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 最新公告</span>
 						</div>
 
 						<div class="text item">
-							<span
-								style="font-size: 18px;">“一位名叫蓝原逸的少年，在多年之后重返家乡，转入了小镇唯一的学校，八年的时光，小镇的一切已经发生了翻天覆地的变化，那些遗失的美好，珍贵的回忆，慢慢苏醒……这就是所谓的奇迹吗？男孩显的有些疑惑。此后，他与自己的青梅竹马相逢，结识了文学部的众人，开始了一日日平凡的校园时光……”她，如此这样的说着。</span>
+							<el-table :data="newsTableData" style="width: 100%">
+								<el-table-column prop="date" label="日期" width="200">
+								</el-table-column>
+								<el-table-column prop="guide" label="摘要">
+								</el-table-column>
+							</el-table>
+							<span style="font-size: 18px;"></span>
 						</div>
 					</el-card>
 					<el-divider id="note_1" content-position="left">游戏介绍</el-divider>
@@ -132,92 +140,6 @@
 							<div class="text item">
 								<span style="font-size: 20px;">
 									暂无介绍内容捏……
-								</span>
-
-							</div>
-						</el-card>
-						<br>
-
-						<el-card class="box-card current-background">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
-							</div>
-
-							<div class="text item">
-								<div>
-									<span style="font-size: 20px;">
-										<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
-										<i class="el-icon-info"></i> 请点击图片以查看角色详情。
-									</span>
-									<template>
-										<div class="demo-image__placeholder">
-											<div class="block">
-												<div class="block">
-													<el-carousel height="400px" type="card">
-														<el-carousel-item style="text-align: center;margin:0 auto;"
-															v-for="item in chr_img_list" :key="item.id">
-															<el-popover placement="top-start" :title="item.chrName"
-																width="200" trigger="hover" content="请点击图片以查看角色详情">
-																<el-image slot="reference" :src="item.idView"
-																	@click="centerDialogVisible = true,presentID = item.id - 1">
-																	<div slot="error" class="image-slot">
-																		<i class="el-icon-picture-outline"></i>
-																	</div>
-																</el-image>
-															</el-popover>
-														</el-carousel-item>
-													</el-carousel>
-												</div>
-											</div>
-										</div>
-									</template>
-								</div>
-							</div>
-						</el-card>
-						<br>
-
-						<el-dialog style="min-width: 900px;" title="角色详情" :visible.sync="centerDialogVisible"
-							width="90%" center>
-							<el-row>
-								<el-col :span="8">
-									<el-image style="height: 420px;width: 300px; margin-left: 0px;"
-										:src="chr_img_list[presentID].idView">
-										<div slot="error" class="image-slot">
-											<i class="el-icon-picture-outline"></i>
-										</div>
-									</el-image>
-								</el-col>
-								<el-col :span="16">
-									<div style="margin-top: 30px;margin-right: 10px;">
-										<el-popover placement="top-start" title="罗马音" width="200" trigger="hover"
-											:content="chr_img_list[presentID].RMPN">
-											<span slot="reference"
-												style="font-size: 30px;">{{chr_img_list[presentID].chrName}}
-											</span>
-										</el-popover>
-										<span style="font-size: 20px;">
-											—— CV : {{chr_img_list[presentID].chrCV}}
-										</span>
-										<el-divider></el-divider>
-										<div v-for="line in chr_img_list[presentID].detail">
-											<span style="font-size: 20px;">{{line.content}}</span><br>
-										</div>
-									</div>
-								</el-col>
-							</el-row>
-						</el-dialog>
-
-						<el-card id="note_3" class="box-card signal-background">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-goods"></i> 敬请期待</span>
-							</div>
-
-							<div class="text item">
-								<span style="font-size: 20px;">
-									后续会开通众筹渠道。另有特典及订制礼品赠送，还请多多支持。<br>
-									我们绝对会以制作出优秀游戏的初心出发，排除一切困难，力争带给玩家一个美好体验。<br>
-									如果有任何想法可随时联系我们。<br>
-									我们欢迎任何对游戏制作有技术有能力的合作伙伴加入。
 								</span>
 
 							</div>
