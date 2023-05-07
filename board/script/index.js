@@ -5,14 +5,14 @@ var data = $.parseJSON($.ajax({
 }).responseText);
 console.log(data);
 
-data.date = new Date()
+data.date = new Date();
 
 var vm = new Vue({
 	el: '#vm',
 	data: data,
 	methods: {
 		goBack() {
-			window.location.href="https://fate-prologue.41workroom.tk/";
+			window.location.href = "https://fate-prologue.41workroom.tk/";
 		},
 		highlight_b() {
 			// id 在当前页面必须唯一的，否则会导致定位不到具体内容

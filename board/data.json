@@ -25,6 +25,13 @@
 		"date": "2022-05-06",
 		"guide": "网站主界面完成"
 	}],
+	
+	"activeday": [
+	   { "dat": "2023-05-21" },
+	   { "dat": "2023-05-15" },
+	   { "dat": "2023-05-5" }
+	],
+	
 	"discribe_scr": "img/discribe.png",
 	"centerDialogVisible": false,
 	"presentID": 0,

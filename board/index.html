@@ -50,7 +50,8 @@
 						</div>
 
 						<div class="text item">
-							<el-table :data="newsTableData" :default-sort = "{prop: 'date', order: 'descending'}" height="200" style="width: 100%">
+							<el-table :data="newsTableData" :default-sort="{prop: 'date', order: 'descending'}"
+								height="200" style="width: 100%">
 								<el-table-column prop="date" label="日期" width="200">
 								</el-table-column>
 								<el-table-column prop="guide" label="摘要">
@@ -66,12 +67,24 @@
 					<div class="text item">
 						<el-card class="box-card line-background">
 							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-user"></i> 历史发展</span>
+								<span style="font-size: 30px;"><i class="el-icon-user"></i> 日程计划</span>
 							</div>
 
 							<div class="text item">
-								<el-calendar v-model="date">
-								</el-calendar>
+								<div class="data-analysis">
+									<el-calendar v-model="date">
+										<!--选中小红点-->
+										<template slot="dateCell" slot-scope="{date, data}">
+											<div>
+												<div v-for="(item, key) in activeday" :key="key">
+													<el-badge v-if="data.day == item.dat" is-dot
+														class="item"></el-badge>
+												</div>
+												<div class="spandate">{{ data.day.split('-').slice(2).join('-') }}</div>
+											</div>
+										</template>
+									</el-calendar>
+								</div>
 							</div>
 						</el-card>
 						<br>
