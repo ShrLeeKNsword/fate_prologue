@@ -8,14 +8,6 @@
 		{
 			"id": 2,
 			"idView": "img/top_2.png"
-		},
-		{
-			"id": 3,
-			"idView": "img/top_3.png"
-		},
-		{
-			"id": 4,
-			"idView": "img/top_4.png"
 		}
 	],
 	"chr_img_list": [{
