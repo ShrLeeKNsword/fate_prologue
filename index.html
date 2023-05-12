@@ -9,9 +9,12 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.compat.css" rel="stylesheet">
 		<link href="css/index.css" rel="stylesheet">
+		<!-- test><link rel="stylesheet" href="script/element/element-ui.css"></!-->
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- test><script src="script/element/element-ui.js"></script></!-->
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-		<script src="https://kit.fontawesome.com/6861b7b8a4.js" crossorigin="anonymous"></script>
+
+		<!-- test><script src="https://kit.fontawesome.com/6861b7b8a4.js" crossorigin="anonymous"></script></!-->
 	</head>
 	<body style="min-width: 800px;">
 		<!--info>本网站版权归梦魂社：Dream soul society & 海口龙华番石榴网络科技工作室所有！</!-->
@@ -21,14 +24,12 @@
 
 			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
 				background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-				<el-menu-item>梦之彼方</el-menu-item>
-				<el-menu-item @click="highlight_b">作品介绍</el-menu-item>
-				<el-menu-item @click="highlight_c">画师详情</el-menu-item>
-				<el-menu-item @click="highlight_d">支持我们</el-menu-item>
+				<el-menu-item>梦之彼方-fate prologue</el-menu-item>
+				<el-menu-item @click="highlight_b">角色介绍</el-menu-item>
+				<el-menu-item @click="highlight_c">最新信息</el-menu-item>
+				<el-menu-item @click="highlight_d">联系我们</el-menu-item>
 			</el-menu>
 
-
-			<br>
 			<div>
 				<div class="demo-image__placeholder">
 					<div class="block">
@@ -49,13 +50,43 @@
 			<div>
 				<template>
 					<el-card class="box-card puzzle-background">
+						<!--test>
 						<div slot="header" class="clearfix">
-							<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 简介</span>
+							<span style="font-size: 25px;"><i class="el-icon-postcard"></i> 简介</span>
 						</div>
+						</!-->
 
-						<div class="text item">
-							<span
-								style="font-size: 18px;">“一位名叫蓝原逸的少年，在多年之后重返家乡，转入了小镇唯一的学校，八年的时光，小镇的一切已经发生了翻天覆地的变化，那些遗失的美好，珍贵的回忆，慢慢苏醒……这就是所谓的奇迹吗？男孩显的有些疑惑。此后，他与自己的青梅竹马相逢，结识了文学部的众人，开始了一日日平凡的校园时光……”她，如此这样的说着。</span>
+						<div class="text item summary"
+							style="margin: 10px 50px 10px 50px;font-size: 30px;text-align: center;line-height: 60px;">
+							<div>
+								<strong style="font-size: 50px;">“&nbsp&nbsp</strong>一位名叫蓝原逸的少年，<strong
+									style="font-size: 50px;">&nbsp&nbsp&nbsp</strong>
+								<br>
+								在多年之后重返家乡，
+								<br>
+								转入了小镇唯一的学校，
+								<br>
+								八年的时光，小镇的一切
+								<br>
+								已经发生了翻天覆地的变化，
+								<br>
+								那些遗失的美好，珍贵的回忆，
+								<br>
+								慢慢苏醒……
+								<br>
+								这就是所谓的奇迹吗？
+								<br>
+								男孩显的有些疑惑。
+								<br>
+								此后，他与自己的青梅竹马相逢，
+								<br>
+								结识了文学部的众人，
+								<br>
+								<strong style="font-size: 50px;">&nbsp&nbsp&nbsp</strong>开始了一日日平凡的校园时光……<strong
+									style="font-size: 50px;">&nbsp&nbsp”</strong>
+								<br>
+								她，如此这样的说着。
+							</div>
 						</div>
 					</el-card>
 					<el-divider id="note_1" content-position="left">游戏介绍</el-divider>
@@ -141,46 +172,71 @@
 									暂无介绍内容捏……
 								</span>
 
-							</div>
+								<div style="min-width: 800px;text-align: center;">
+									<div v-for="painter in painters" :key="painter.id"
+										style="width: 320px;display: flex;">
+										<template>
+											<div class="demo-image__placeholder">
+												<div class="block">
+													<div class="block">
+														<el-carousel height="480px" style="width: 320px;">
+															<el-carousel-item style="text-align: center;margin:0 auto;"
+																v-for="item in painter.img" :key="item.id">
+																<a :href="item.link">
+																	<el-image :src="item.src">
+																		<div slot="error" class="image-slot">
+																			<i class="el-icon-picture-outline"></i>
+																	</el-image>
+																</a>
+															</el-carousel-item>
+														</el-carousel>
+													</div>
+												</div>
+											</div>
+										</template>
+									</div>
+								</div>
 						</el-card>
 						<br>
 
-						<el-card class="box-card current-background">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
-							</div>
+						<div style="float: unset;min-width: 800px;">
+							<el-card class="box-card current-background">
+								<div slot="header" class="clearfix">
+									<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
+								</div>
 
-							<div class="text item">
-								<div>
-									<span style="font-size: 20px;">
-										<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
-										<i class="el-icon-info"></i> 请点击图片以查看角色详情。
-									</span>
-									<template>
-										<div class="demo-image__placeholder">
-											<div class="block">
+								<div class="text item">
+									<div>
+										<span style="font-size: 20px;">
+											<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
+											<i class="el-icon-info"></i> 请点击图片以查看角色详情。
+										</span>
+										<template>
+											<div class="demo-image__placeholder">
 												<div class="block">
-													<el-carousel height="400px" type="card">
-														<el-carousel-item style="text-align: center;margin:0 auto;"
-															v-for="item in chr_img_list" :key="item.id">
-															<el-popover placement="top-start" :title="item.chrName"
-																width="200" trigger="hover" content="请点击图片以查看角色详情">
-																<el-image slot="reference" :src="item.idView"
-																	@click="centerDialogVisible = true,presentID = item.id - 1">
-																	<div slot="error" class="image-slot">
-																		<i class="el-icon-picture-outline"></i>
-																	</div>
-																</el-image>
-															</el-popover>
-														</el-carousel-item>
-													</el-carousel>
+													<div class="block">
+														<el-carousel height="400px" type="card">
+															<el-carousel-item style="text-align: center;margin:0 auto;"
+																v-for="item in chr_img_list" :key="item.id">
+																<el-popover placement="top-start" :title="item.chrName"
+																	width="200" trigger="hover" content="请点击图片以查看角色详情">
+																	<el-image slot="reference" :src="item.idView"
+																		@click="centerDialogVisible = true,presentID = item.id - 1">
+																		<div slot="error" class="image-slot">
+																			<i class="el-icon-picture-outline"></i>
+																		</div>
+																	</el-image>
+																</el-popover>
+															</el-carousel-item>
+														</el-carousel>
+													</div>
 												</div>
 											</div>
-										</div>
-									</template>
+										</template>
+									</div>
 								</div>
-							</div>
-						</el-card>
+							</el-card>
+						</div>
 						<br>
 
 						<el-dialog style="min-width: 900px;" title="角色详情" :visible.sync="centerDialogVisible"
@@ -289,8 +345,8 @@
 				</template>
 			</div>
 		</div>
-		
+
 		<script src="script/index.js" type="text/javascript"></script>
-		
+
 	</body>
 </html>
