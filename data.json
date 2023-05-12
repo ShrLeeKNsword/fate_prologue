@@ -21,11 +21,11 @@
 		}, {
 			"id": 2,
 			"src": "img/painter/sironora/02.png",
-			"link": "https://www.pixiv.net/users/103523"
+			"link": "https://www.pixiv.net/users/13000627"
 		}, {
 			"id": 3,
 			"src": "img/painter/sironora/03.png",
-			"link": "https://www.pixiv.net/users/103523"
+			"link": "https://www.pixiv.net/users/13000627"
 		}, {
 			"id": 4,
 			"src": "img/painter/sironora/04.png",
@@ -37,7 +37,7 @@
 		}, {
 			"id": 6,
 			"src": "img/painter/sironora/06.png",
-			"link": "https://www.pixiv.net/users/103523"
+			"link": "https://www.pixiv.net/users/13000627"
 		}],
 		"link": "https://www.pixiv.net/users/13000627"
 	}, {
@@ -46,30 +46,28 @@
 		"pivixid": "103523",
 		"img": [{
 			"id": 1,
-			"src": "img/painter/sironora/01.png",
-			"link": "https://www.pixiv.net/artworks/86700206"
+			"src": "img/painter/星豆まな/01.png",
+			"link": ""
 		}, {
 			"id": 2,
-			"src": "img/painter/sironora/02.png",
-			"link": "https://www.pixiv.net/users/103523"
-		}, {
-			"id": 3,
-			"src": "img/painter/sironora/03.png",
-			"link": "https://www.pixiv.net/users/103523"
-		}, {
-			"id": 4,
-			"src": "img/painter/sironora/04.png",
-			"link": "https://www.pixiv.net/artworks/106226241"
-		}, {
-			"id": 5,
-			"src": "img/painter/sironora/05.png",
-			"link": "https://www.pixiv.net/artworks/103878909"
-		}, {
-			"id": 6,
-			"src": "img/painter/sironora/06.png",
-			"link": "https://www.pixiv.net/users/103523"
+			"src": "img/painter/星豆まな/02.png",
+			"link": ""
 		}],
 		"link": "https://www.pixiv.net/users/103523"
+	}, {
+		"id": 3,
+		"name": "Azel",
+		"pivixid": "2416323",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/Azel/01.png",
+			"link": ""
+		}, {
+			"id": 2,
+			"src": "img/painter/Azel/02.png",
+			"link": ""
+		}],
+		"link": "https://www.pixiv.net/users/2416323"
 	}],
 	"chr_img_list": [{
 			"id": 1,
