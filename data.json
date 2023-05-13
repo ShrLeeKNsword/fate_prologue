@@ -47,15 +47,43 @@
 		"img": [{
 			"id": 1,
 			"src": "img/painter/星豆まな/01.png",
-			"link": ""
+			"link": "https://www.pixiv.net/artworks/92878146"
 		}, {
 			"id": 2,
 			"src": "img/painter/星豆まな/02.png",
-			"link": ""
+			"link": "https://www.pixiv.net/artworks/99749307"
 		}],
 		"link": "https://www.pixiv.net/users/103523"
 	}, {
 		"id": 3,
+		"name": "ほし",
+		"pivixid": "1198913",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/ほし/01.png",
+			"link": ""
+		}, {
+			"id": 2,
+			"src": "img/painter/ほし/02.png",
+			"link": ""
+		}],
+		"link": "https://www.pixiv.net/users/1198913"
+	}, {
+		"id": 4,
+		"name": "Azel",
+		"pivixid": "2416323",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/Azel/01.png",
+			"link": ""
+		}, {
+			"id": 2,
+			"src": "img/painter/Azel/02.png",
+			"link": ""
+		}],
+		"link": "https://www.pixiv.net/users/2416323"
+	}, {
+		"id": 5,
 		"name": "Azel",
 		"pivixid": "2416323",
 		"img": [{

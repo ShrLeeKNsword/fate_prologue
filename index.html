@@ -49,7 +49,7 @@
 			</div>
 			<div>
 				<template>
-					<el-card class="box-card puzzle-background">
+					<el-card class="box-card"">
 						<!--test>
 						<div slot="header" class="clearfix">
 							<span style="font-size: 25px;"><i class="el-icon-postcard"></i> 简介</span>
@@ -57,7 +57,7 @@
 						</!-->
 
 						<div class="text item summary"
-							style="margin: 10px 50px 10px 50px;font-size: 30px;text-align: center;line-height: 60px;">
+							style="margin: 10px 50px 10px 50px;font-size: 30px;text-align: center;line-height: 60px;background-image: none;">
 							<div>
 								<strong style="font-size: 50px;">“&nbsp&nbsp</strong>一位名叫蓝原逸的少年，<strong
 									style="font-size: 50px;">&nbsp&nbsp&nbsp</strong>
@@ -182,7 +182,7 @@
 														<el-carousel height="480px" style="width: 320px;">
 															<el-carousel-item style="text-align: center;margin:0 auto;"
 																v-for="item in painter.img" :key="item.id">
-																<a :href="item.link">
+																<a :href="item.link" target="_blank">
 																	<el-image :src="item.src">
 																		<div slot="error" class="image-slot">
 																			<i class="el-icon-picture-outline"></i>
@@ -194,6 +194,7 @@
 												</div>
 											</div>
 										</template>
+										<el-divider></el-divider>
 									</div>
 								</div>
 						</el-card>
