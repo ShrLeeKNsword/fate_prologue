@@ -1,6 +1,7 @@
 {
 	"ver_num": "0.0.0",
 	"activeIndex": "1",
+	"summary_background": "morning_background",
 	"top_img_list": [{
 			"id": 1,
 			"idView": "img/top_1.png"
@@ -61,11 +62,19 @@
 		"img": [{
 			"id": 1,
 			"src": "img/painter/ほし/01.png",
-			"link": ""
+			"link": "https://www.pixiv.net/artworks/80740178"
 		}, {
 			"id": 2,
 			"src": "img/painter/ほし/02.png",
-			"link": ""
+			"link": "https://www.pixiv.net/artworks/78369890"
+		}, {
+			"id": 3,
+			"src": "img/painter/ほし/03.png",
+			"link": "https://www.pixiv.net/users/1198913"
+		}, {
+			"id": 4,
+			"src": "img/painter/ほし/04.png",
+			"link": "https://www.pixiv.net/users/1198913"
 		}],
 		"link": "https://www.pixiv.net/users/1198913"
 	}, {
@@ -75,27 +84,27 @@
 		"img": [{
 			"id": 1,
 			"src": "img/painter/Azel/01.png",
-			"link": ""
+			"link": "https://www.pixiv.net/artworks/98107485"
 		}, {
 			"id": 2,
 			"src": "img/painter/Azel/02.png",
-			"link": ""
+			"link": "https://www.pixiv.net/artworks/103975120"
 		}],
 		"link": "https://www.pixiv.net/users/2416323"
 	}, {
 		"id": 5,
-		"name": "Azel",
-		"pivixid": "2416323",
+		"name": "しろきもち",
+		"pivixid": "31659436",
 		"img": [{
 			"id": 1,
-			"src": "img/painter/Azel/01.png",
-			"link": ""
+			"src": "img/painter/しろきもち/01.png",
+			"link": "https://www.pixiv.net/users/31659436"
 		}, {
 			"id": 2,
-			"src": "img/painter/Azel/02.png",
-			"link": ""
+			"src": "img/painter/しろきもち/02.png",
+			"link": "https://www.pixiv.net/artworks/73054291"
 		}],
-		"link": "https://www.pixiv.net/users/2416323"
+		"link": "https://www.pixiv.net/users/31659436"
 	}],
 	"chr_img_list": [{
 			"id": 1,
@@ -220,6 +229,18 @@
 			}]
 		}
 	],
+	
+	"newsTableData": [{
+		"date": "2022-05-06",
+		"guide": "网站公告界面施工"
+	}, {
+		"date": "2022-05-06",
+		"guide": "网站主界面完成"
+	}, {
+		"date": "2022-05-14",
+		"guide": "网站维护改造完成"
+	}],
+		
 	"discribe_scr": "img/discribe.png",
 	"centerDialogVisible": false,
 	"presentID": 0,
