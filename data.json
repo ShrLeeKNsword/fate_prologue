@@ -2,6 +2,7 @@
 	"ver_num": "0.0.0",
 	"activeIndex": "1",
 	"summary_background": "morning_background",
+	"index_value": 0,
 	"top_img_list": [{
 			"id": 1,
 			"idView": "img/top_1.png"

@@ -18,386 +18,407 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 		<!-- test><script src="https://kit.fontawesome.com/6861b7b8a4.js" crossorigin="anonymous"></script></!-->
 	</head>
-	<body style="min-width: 1000px;">
+	<body style="min-width: 800px;" class="architect-background">
 		<!--info>本网站版权归梦魂社：Dream soul society & 海口龙华番石榴网络科技工作室所有！</!-->
 
 
-		<div id="vm" class="architect-background">
+		<div id="vm"
+			style="max-width: 1600px;margin: 0 auto; text-align: center;box-shadow: 0px 0px -50x 30px gray;background-color: aliceblue;">
+			<el-card class="box-card" style="text-align: left;">
+				<div style="border-style:solid;border-width:1px;border-color: seashell">
+					<div style=";height: 50px;background-color: midnightblue;padding: 5px 30px 5px 30px;">
+						<span style="position: absolute;color: aliceblue;font-size: 25px;margin-top: 8px;">梦之彼方 - fate prologue</span>
+						<div style="float: right;color: aliceblue;font-size: 20px;margin-left: 10px;margin-right: 10px;margin-top: 12px;">English</div>
+						<div style="float: right;color: aliceblue;font-size: 20px;margin-left: 10px;margin-right: 10px;margin-top: 12px;">日本語</div>
+					</div>
 
-			<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-				background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-				<el-menu-item>梦之彼方-fate prologue</el-menu-item>
-				<el-menu-item @click="highlight_b">角色介绍</el-menu-item>
-				<el-menu-item @click="highlight_c">最新信息</el-menu-item>
-				<el-menu-item @click="highlight_d">联系我们</el-menu-item>
-			</el-menu>
-
-			<div>
-				<div class="demo-image__placeholder">
-					<div class="block">
-						<div class="block">
-							<el-carousel height="400px">
-								<el-carousel-item style="text-align: center;margin:0 auto;" v-for="item in top_img_list"
-									:key="item.id">
-									<el-image :src="item.idView">
-										<div slot="error" class="image-slot">
-											<i class="el-icon-picture-outline"></i>
-									</el-image>
-								</el-carousel-item>
-							</el-carousel>
+					<div style="height: 250px;">
+						<div style="position: absolute;padding: 50px;">
+							<img src="logo.jpg" style="height: 150px;width: 150px;box-shadow: 5px 5px 2px 2px gray;">
+						</div>
+						<div style="height: 180px;background-color: azure;position: initial;"></div>
+						<div style="height: 55px;margin-top: 15px;">
+							<div style="float:left;height:100%;width: 20%;"></div>
+							<div style="float:left;height:100%;width: 80%;text-align: center;">
+								<div style="float:left;height:100%;width: 15%;"></div>
+								<div style="float:left;height:100%;width: 20%;"><el-button type="text">角色介绍</el-button></div>
+								<div style="float:left;height:100%;width: 20%;"><el-button type="text">最新动态</el-button></div>
+								<div style="float:left;height:100%;width: 20%;"><el-button type="text">画师介绍</el-button></div>
+								<div style="float:left;height:100%;width: 20%;"><el-button type="text">制作成员</el-button></div>
+								<div style="float:left;height:100%;width: 5%;"></div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div>
-				<template>
+
+
 					<div>
-						<el-card class="box-card" v-bind:class="[summary_background]">
-							<!--test>
+						<template>
+							<el-carousel height="500px" style="height: 500px;">
+								<el-carousel-item v-for="item in top_img_list" :key="item.id">
+									<div>
+										<el-image :src="item.idView" fit="contain">
+											<div slot="placeholder" class="image-slot">
+												加载中
+											</div>
+											<div slot="error" class="image-slot">
+												<i class="el-icon-picture-outline"></i>
+										</el-image>
+									</div>
+								</el-carousel-item>
+							</el-carousel>
+						</template>
+					</div>
+					<div>
+						<template>
+							<div>
+								<el-card class="box-card" v-bind:class="[summary_background]">
+									<!--test>
 						<div slot="header" class="clearfix">
 							<span style="font-size: 25px;"><i class="el-icon-postcard"></i> 简介</span>
 						</div>
 						</!-->
 
-							<div class="text item summary"
-								style="margin: 10px 50px 10px 50px;font-size: 30px;text-align: center;line-height: 60px;">
-								<div>
-									<strong style="font-size: 50px;">“&nbsp&nbsp</strong>一位名叫蓝原逸的少年，<strong
-										style="font-size: 50px;">&nbsp&nbsp&nbsp</strong>
-									<br>
-									在多年之后重返家乡，
-									<br>
-									转入了小镇唯一的学校，
-									<br>
-									八年的时光，小镇的一切
-									<br>
-									已经发生了翻天覆地的变化，
-									<br>
-									那些遗失的美好，珍贵的回忆，
-									<br>
-									慢慢苏醒……
-									<br>
-									这就是所谓的奇迹吗？
-									<br>
-									男孩显的有些疑惑。
-									<br>
-									此后，他与自己的青梅竹马相逢，
-									<br>
-									结识了文学部的众人，
-									<br>
-									<strong style="font-size: 50px;">&nbsp&nbsp&nbsp</strong>开始了一日日平凡的校园时光……<strong
-										style="font-size: 50px;">&nbsp&nbsp”</strong>
-									<br>
-									她，如此这样的说着。
-								</div>
-							</div>
-						</el-card>
-					</div>
-
-					<div class="text item">
-						<el-card class="box-card line-background">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-user"></i> STAFF</span>
+									<div class="text item summary"
+										style="margin: 10px 40px 10px 40px;font-size: 20px;text-align: center;line-height: 40px;">
+										<div>
+											<strong
+												style="font-size: 30px;">“&nbsp&nbsp</strong>一位名叫蓝原逸的少年，在多年之后重返家乡，转入了小镇唯一的学校，<strong
+												style="font-size: 50px;">&nbsp&nbsp&nbsp</strong>
+											<br>
+											八年的时光，小镇的一切已经发生了翻天覆地的变化，那些遗失的美好，
+											<br>
+											珍贵的回忆，慢慢苏醒……这就是所谓的奇迹吗？
+											<br>
+											男孩显的有些疑惑。此后，他与自己的青梅竹马相逢，
+											<br>
+											<strong
+												style="font-size: 30;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>结识了文学部的众人，开始了一日日平凡的校园时光……<strong
+												style="font-size: 30px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp”</strong>
+											<br>
+											她，如此这样的说着。
+										</div>
+									</div>
+								</el-card>
 							</div>
 
 							<div class="text item">
+								<el-card class="box-card line-background">
+									<div slot="header" class="clearfix">
+										<span style="font-size: 30px;"><i class="el-icon-user"></i> STAFF</span>
+									</div>
 
-								<el-row>
-									<el-col :span="12">
+									<div class="text item">
 
-										<span>
-											<template>
-												<div class="demo-image__placeholder"
-													style="margin: 8px 10px 10px 10px;">
-													<div class="block">
-														<el-image :src="discribe_scr"
-															style="box-shadow:5px 3px 5px black;border-radius: 5px 5px 5px 5px;">
-															<div slot="error" class="image-slot">
-																<i class="el-icon-picture-outline"></i>
-															</div>
-														</el-image>
-													</div>
-												</div>
-											</template>
-										</span>
+										<el-row>
+											<el-col :span="12">
 
-									</el-col>
-									<el-col :span="12" style="padding-left: 60px;padding-right: 5px;">
-										<!--这里插入公告-->
-										<span style="font-size: 25px;"><strong>制作组</strong></span><br>
-										<span style="font-size: 20px;">梦魂社：Dream soul society</span><br>
-										<br>
-										<span style="font-size: 20px;">制作中ing</span><br>
-										星豆まな：pixivID103523<br>
-										sironora：pixivID13000627<br>
-										Azel：pixivID2416323<br>
-										<span style="font-size: 20px;">另外，还有本组主美及其他美术等。</span><br>
-										<span style="font-size: 20px;">未来合作可能：</span><br>
-										しろきもち：pixivID31659436<br>
-										ほし：pixivID1198913<br>
-										塩かずのこ：pixivID4310379<br>
-
-
-
-									</el-col>
-								</el-row>
-
-							</div>
-						</el-card>
-						<br>
-						<el-card class="box-card stripes-background">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i> 特别声明</span>
-							</div>
-
-							<div class="text item">
-								<span style="font-size: 20px;">
-									本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联。<br>
-									本作品所有出场角色均已年满18周岁。<br>
-									本作还将在制作完成后开放同人二次创作权限。<br>
-									可免费使用公布的人物立绘和音乐等内容。（但商用仍需另外沟通哦~）<br>
-									希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持。<br>
-								</span>
-							</div>
-
-						</el-card>
-						<br>
-
-						<div>
-							<el-card id="note_2" class="box-card">
-								<div slot="header" class="clearfix">
-									<span style="font-size: 30px;"><i class="el-icon-picture-outline-round"></i>
-										画师介绍</span>
-								</div>
-
-								<div class="text item">
-									<div style="text-align: center;width: 100%;margin: 20px 20px 0px 15%;">
-										<div v-for="painter in painters" :key="painter.id"
-											style="width: 320px;display: flex;">
-
-											<el-row style="min-width: 800px;">
-												<el-col :span="12">
+												<span>
 													<template>
-														<div class="demo-image__placeholder">
+														<div class="demo-image__placeholder"
+															style="margin: 8px 10px 10px 10px;">
 															<div class="block">
-																<div class="block">
-																	<el-carousel height="300px" width="320px"
-																		type="card">
-																		<el-carousel-item v-for="item in painter.img"
-																			:key="item.id">
-																			<a :href="item.link" target="_blank">
-																				<el-image :src="item.src">
-																					<div slot="error"
-																						class="image-slot">
-																						<i
-																							class="el-icon-picture-outline"></i>
-																				</el-image>
-																			</a>
-																		</el-carousel-item>
-																	</el-carousel>
-																</div>
+																<el-image :src="discribe_scr"
+																	style="box-shadow:5px 3px 5px black;border-radius: 5px 5px 5px 5px;">
+																	<div slot="error" class="image-slot">
+																		<i class="el-icon-picture-outline"></i>
+																	</div>
+																</el-image>
 															</div>
 														</div>
 													</template>
-												</el-col>
-												<el-col :span="12">
-													<div
-														style="text-align: center;margin-left: 30%;margin-top: 20%;margin-bottom: 20%;line-height: 50px;">
-														<span style="font-size: 40px;">{{painter.name}}</span><br>
-														<span style="font-size: 30px;">PivixID
-															{{painter.pivixid}}</span><br>
-														<a :href="painter.link" target="_blank"><el-button
-																type="primary" plain>P站主页</el-button></a>
-													</div>
-												</el-col>
-											</el-row>
-										</div>
+												</span>
+
+											</el-col>
+											<el-col :span="12" style="padding-left: 60px;padding-right: 5px;">
+												<!--这里插入公告-->
+												<span style="font-size: 25px;"><strong>制作组</strong></span><br>
+												<span style="font-size: 20px;">梦魂社：Dream soul society</span><br>
+												<br>
+												<span style="font-size: 20px;">制作中ing</span><br>
+												星豆まな：pixivID103523<br>
+												sironora：pixivID13000627<br>
+												Azel：pixivID2416323<br>
+												<span style="font-size: 20px;">另外，还有本组主美及其他美术等。</span><br>
+												<span style="font-size: 20px;">未来合作可能：</span><br>
+												しろきもち：pixivID31659436<br>
+												ほし：pixivID1198913<br>
+												塩かずのこ：pixivID4310379<br>
+
+
+
+											</el-col>
+										</el-row>
+
 									</div>
-								</div>
-							</el-card>
-						</div>
+								</el-card>
+								<br>
+								<el-card class="box-card stripes-background">
+									<div slot="header" class="clearfix">
+										<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i>
+											特别声明</span>
+									</div>
 
-						<br>
-
-						<div style="min-width: 800px;">
-							<el-card class="box-card current-background">
-								<div slot="header" class="clearfix">
-									<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
-								</div>
-
-								<div class="text item">
-									<div>
+									<div class="text item">
 										<span style="font-size: 20px;">
-											<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
-											<i class="el-icon-info"></i> 请点击图片以查看角色详情。
+											本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联。<br>
+											本作品所有出场角色均已年满18周岁。<br>
+											本作还将在制作完成后开放同人二次创作权限。<br>
+											可免费使用公布的人物立绘和音乐等内容。（但商用仍需另外沟通哦~）<br>
+											希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持。<br>
 										</span>
-										<template>
-											<div class="demo-image__placeholder">
-												<div class="block">
-													<div class="block">
-														<el-carousel height="400px" type="card">
-															<el-carousel-item style="text-align: center;margin:0 auto;"
-																v-for="item in chr_img_list" :key="item.id">
-																<el-popover placement="top-start" :title="item.chrName"
-																	width="200" trigger="hover" content="请点击图片以查看角色详情">
-																	<el-image slot="reference" :src="item.idView"
-																		@click="centerDialogVisible = true,presentID = item.id - 1">
-																		<div slot="error" class="image-slot">
-																			<i class="el-icon-picture-outline"></i>
+									</div>
+
+								</el-card>
+								<br>
+
+								<div>
+									<el-card id="note_2" class="box-card">
+										<div slot="header" class="clearfix">
+											<span style="font-size: 30px;"><i class="el-icon-picture-outline-round"></i>
+												画师介绍</span>
+										</div>
+
+										<div class="text item">
+											<div style="text-align: center;width: 100%;margin: 20px 20px 0px 15%;">
+												<div v-for="painter in painters" :key="painter.id"
+													style="width: 320px;display: flex;">
+
+													<el-row style="min-width: 800px;">
+														<el-col :span="12">
+															<template>
+																<div class="demo-image__placeholder">
+																	<div class="block">
+																		<div class="block">
+																			<el-carousel height="300px" width="320px"
+																				type="card">
+																				<el-carousel-item
+																					v-for="item in painter.img"
+																					:key="item.id">
+																					<a :href="item.link"
+																						target="_blank">
+																						<el-image :src="item.src">
+																							<div slot="error"
+																								class="image-slot">
+																								<i
+																									class="el-icon-picture-outline"></i>
+																						</el-image>
+																					</a>
+																				</el-carousel-item>
+																			</el-carousel>
 																		</div>
-																	</el-image>
-																</el-popover>
-															</el-carousel-item>
-														</el-carousel>
-													</div>
+																	</div>
+																</div>
+															</template>
+														</el-col>
+														<el-col :span="12">
+															<div
+																style="text-align: center;margin-left: 30%;margin-top: 20%;margin-bottom: 20%;line-height: 50px;">
+																<span
+																	style="font-size: 40px;">{{painter.name}}</span><br>
+																<span style="font-size: 30px;">PivixID
+																	{{painter.pivixid}}</span><br>
+																<a :href="painter.link" target="_blank"><el-button
+																		type="primary" plain>P站主页</el-button></a>
+															</div>
+														</el-col>
+													</el-row>
 												</div>
 											</div>
-										</template>
-									</div>
+										</div>
+									</el-card>
 								</div>
-							</el-card>
-						</div>
-						<br>
 
-						<el-dialog style="min-width: 900px;" title="角色详情" :visible.sync="centerDialogVisible"
-							width="90%" center>
-							<el-row>
-								<el-col :span="8">
-									<el-image style="height: 420px;width: 300px; margin-left: 0px;"
-										:src="chr_img_list[presentID].idView">
-										<div slot="error" class="image-slot">
-											<i class="el-icon-picture-outline"></i>
+								<br>
+
+								<div style="min-width: 800px;">
+									<el-card class="box-card current-background">
+										<div slot="header" class="clearfix">
+											<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
 										</div>
-									</el-image>
-								</el-col>
-								<el-col :span="16">
-									<div style="margin-top: 30px;margin-right: 10px;">
-										<el-popover placement="top-start" title="罗马音" width="200" trigger="hover"
-											:content="chr_img_list[presentID].RMPN">
-											<span slot="reference"
-												style="font-size: 30px;">{{chr_img_list[presentID].chrName}}
-											</span>
-										</el-popover>
-										<span style="font-size: 20px;">
-											—— CV : {{chr_img_list[presentID].chrCV}}
-										</span>
-										<el-divider></el-divider>
-										<div v-for="line in chr_img_list[presentID].detail">
-											<span style="font-size: 20px;">{{line.content}}</span><br>
+
+										<div class="text item">
+											<div>
+												<span style="font-size: 20px;">
+													<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
+													<i class="el-icon-info"></i> 请点击图片以查看角色详情。
+												</span>
+												<template>
+													<div class="demo-image__placeholder">
+														<div class="block">
+															<div class="block">
+																<el-carousel height="400px" type="card">
+																	<el-carousel-item
+																		style="text-align: center;margin:0 auto;"
+																		v-for="item in chr_img_list" :key="item.id">
+																		<el-popover placement="top-start"
+																			:title="item.chrName" width="200"
+																			trigger="hover" content="请点击图片以查看角色详情">
+																			<el-image slot="reference"
+																				:src="item.idView"
+																				@click="centerDialogVisible = true,presentID = item.id - 1">
+																				<div slot="error" class="image-slot">
+																					<i
+																						class="el-icon-picture-outline"></i>
+																				</div>
+																			</el-image>
+																		</el-popover>
+																	</el-carousel-item>
+																</el-carousel>
+															</div>
+														</div>
+													</div>
+												</template>
+											</div>
 										</div>
+									</el-card>
+								</div>
+								<br>
+
+								<el-dialog style="min-width: 900px;" title="角色详情" :visible.sync="centerDialogVisible"
+									width="90%" center>
+									<el-row>
+										<el-col :span="8">
+											<el-image style="height: 420px;width: 300px; margin-left: 0px;"
+												:src="chr_img_list[presentID].idView">
+												<div slot="error" class="image-slot">
+													<i class="el-icon-picture-outline"></i>
+												</div>
+											</el-image>
+										</el-col>
+										<el-col :span="16">
+											<div style="margin-top: 30px;margin-right: 10px;">
+												<el-popover placement="top-start" title="罗马音" width="200"
+													trigger="hover" :content="chr_img_list[presentID].RMPN">
+													<span slot="reference"
+														style="font-size: 30px;">{{chr_img_list[presentID].chrName}}
+													</span>
+												</el-popover>
+												<span style="font-size: 20px;">
+													—— CV : {{chr_img_list[presentID].chrCV}}
+												</span>
+												<el-divider></el-divider>
+												<div v-for="line in chr_img_list[presentID].detail">
+													<span style="font-size: 20px;">{{line.content}}</span><br>
+												</div>
+											</div>
+										</el-col>
+									</el-row>
+								</el-dialog>
+
+								<el-card id="note_3" class="box-card">
+									<div slot="header" class="clearfix">
+										<span style="font-size: 30px;"><i class="el-icon-goods"></i> 敬请期待</span>
 									</div>
-								</el-col>
-							</el-row>
-						</el-dialog>
 
-						<el-card id="note_3" class="box-card">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-goods"></i> 敬请期待</span>
-							</div>
+									<div class="text item">
+										<span style="font-size: 20px;">
+											后续会开通众筹渠道。另有特典及订制礼品赠送，还请多多支持。<br>
+											我们绝对会以制作出优秀游戏的初心出发，排除一切困难，力争带给玩家一个美好体验。<br>
+											如果有任何想法可随时联系我们。<br>
+											我们欢迎任何对游戏制作有技术有能力的合作伙伴加入。
+										</span>
 
-							<div class="text item">
-								<span style="font-size: 20px;">
-									后续会开通众筹渠道。另有特典及订制礼品赠送，还请多多支持。<br>
-									我们绝对会以制作出优秀游戏的初心出发，排除一切困难，力争带给玩家一个美好体验。<br>
-									如果有任何想法可随时联系我们。<br>
-									我们欢迎任何对游戏制作有技术有能力的合作伙伴加入。
-								</span>
-
-							</div>
-						</el-card>
-						<br>
-
-						<el-card class="box-card puzzle-background">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 近期公告</span>
-							</div>
-
-							<div class="text item">
-								<el-table :data="newsTableData" :default-sort="{prop: 'date', order: 'descending'}"
-									height="200" style="width: 100%">
-									<el-table-column prop="date" label="日期" width="200">
-									</el-table-column>
-									<el-table-column prop="guide" label="摘要">
-									</el-table-column>
-								</el-table>
-								<span style="font-size: 18px;"></span>
-							</div>
-						</el-card>
-						<br>
-
-						<el-card class="box-card">
-							<div slot="header" class="clearfix">
-								<span style="font-size: 30px;"><i class="el-icon-star-off"></i> 联系方式</span>
-							</div>
-
-							<div class="text item" style="padding-left: 10%;padding-right: 40%;font-size: 20px;">
-
-
-								<el-row>
-									<el-col :span="12">
-										总策划QQ
-									</el-col>
-									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我直接加好友!"
-											placement="top"><el-link type="primary"
-												href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><i
-													class="el-icon-user"></i>2862824043</el-link>
-									</el-col>
-								</el-row>
+									</div>
+								</el-card>
 								<br>
-								<el-row>
-									<el-col :span="12">
-										总策划邮箱
-									</el-col>
-									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我发送邮件!"
-											placement="top"><el-link type="primary" href="mailto:2862824043@qq.com"><i
-													class="el-icon-message"></i>2862824043@qq.com</el-link>
-									</el-col>
-								</el-row>
+
+								<el-card class="box-card puzzle-background">
+									<div slot="header" class="clearfix">
+										<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 近期公告</span>
+									</div>
+
+									<div class="text item">
+										<el-table :data="newsTableData"
+											:default-sort="{prop: 'date', order: 'descending'}" height="200"
+											style="width: 100%">
+											<el-table-column prop="date" label="日期" width="200">
+											</el-table-column>
+											<el-table-column prop="guide" label="摘要">
+											</el-table-column>
+										</el-table>
+										<span style="font-size: 18px;"></span>
+									</div>
+								</el-card>
 								<br>
-								<el-row>
-									<el-col :span="12">
-										QQ聊天群
-									</el-col>
-									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我加群畅聊吧"
-											placement="top"><el-link type="primary"
-												href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=R20jFb406Egm1dTHeff_dmfnZ_40nIi8&noverify=0&group_code=226995538"><i
-													class="el-icon-user"></i>226995538 </el-link>
-									</el-col>
-								</el-row>
+
+								<el-card class="box-card">
+									<div slot="header" class="clearfix">
+										<span style="font-size: 30px;"><i class="el-icon-star-off"></i> 联系方式</span>
+									</div>
+
+									<div class="text item"
+										style="padding-left: 10%;padding-right: 40%;font-size: 20px;">
+
+
+										<el-row>
+											<el-col :span="12">
+												总策划QQ
+											</el-col>
+											<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我直接加好友!"
+													placement="top"><el-link type="primary"
+														href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><i
+															class="el-icon-user"></i>2862824043</el-link>
+											</el-col>
+										</el-row>
+										<br>
+										<el-row>
+											<el-col :span="12">
+												总策划邮箱
+											</el-col>
+											<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我发送邮件!"
+													placement="top"><el-link type="primary"
+														href="mailto:2862824043@qq.com"><i
+															class="el-icon-message"></i>2862824043@qq.com</el-link>
+											</el-col>
+										</el-row>
+										<br>
+										<el-row>
+											<el-col :span="12">
+												QQ聊天群
+											</el-col>
+											<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我加群畅聊吧"
+													placement="top"><el-link type="primary"
+														href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=R20jFb406Egm1dTHeff_dmfnZ_40nIi8&noverify=0&group_code=226995538"><i
+															class="el-icon-user"></i>226995538 </el-link>
+											</el-col>
+										</el-row>
+										<br>
+										<el-row>
+											<el-col :span="12">
+												B站主页
+											</el-col>
+											<el-col :span="12"><el-tooltip class="item" effect="dark"
+													content="点我前往B站主页!" placement="top"><el-link type="primary"
+														href="https://space.bilibili.com/16531901"><i
+															class="el-icon-discover"></i>点击跳转 </el-link>
+											</el-col>
+										</el-row>
+									</div>
+								</el-card>
 								<br>
-								<el-row>
-									<el-col :span="12">
-										B站主页
-									</el-col>
-									<el-col :span="12"><el-tooltip class="item" effect="dark" content="点我前往B站主页!"
-											placement="top"><el-link type="primary"
-												href="https://space.bilibili.com/16531901"><i
-													class="el-icon-discover"></i>点击跳转 </el-link>
-									</el-col>
-								</el-row>
+
+						</template>
+
+						<div style="background-color: darkgray;padding: 10px 10px 10px 10px;">
+							<div
+								style="text-align:center;border-color=black;padding: 5px 5px 5px 5px;text-shadow: 0 0 8px white,0 0 8px aliceblue;">
+								<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+										class="lazy-loaded" decoding="async" alt="知识共享许可协议" style="border-width:0"
+										src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+										data-lazy-type="image"
+										data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"><noscript><img
+											decoding="async" alt="知识共享许可协议" style="border-width:0"
+											src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></noscript></a><br>本作品中所有内容除特别声明外<br>
+								遵守<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+									target="_blank" style="text-decoration:none;">知识共享署名-非商业性使用-相同方式共享
+									4.0 国际许可协议</a>进行许可
 							</div>
-						</el-card>
-						<br>
 
-				</template>
+						</div>
 
-				<div style="background-color: darkgray;padding: 10px 10px 10px 10px;">
-					<div
-						style="text-align:center;border-color=black;padding: 5px 5px 5px 5px;text-shadow: 0 0 8px white,0 0 8px aliceblue;">
-						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
-								class="lazy-loaded" decoding="async" alt="知识共享许可协议" style="border-width:0"
-								src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" data-lazy-type="image"
-								data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"><noscript><img
-									decoding="async" alt="知识共享许可协议" style="border-width:0"
-									src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></noscript></a><br>本作品中所有内容除特别声明外<br>
-						遵守<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"
-							style="text-decoration:none;">知识共享署名-非商业性使用-相同方式共享
-							4.0 国际许可协议</a>进行许可
 					</div>
-
 				</div>
-
-			</div>
+			</el-card>
 		</div>
 
 		<script src="script/index.js" type="text/javascript"></script>
