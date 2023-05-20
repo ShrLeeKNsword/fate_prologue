@@ -275,7 +275,7 @@
 																v-for="item in painter.img" :key="item.id">
 																<div style="float: left;width: 45%;padding: 2.5% 2.5% 2.5% 2.5%;">
 																	<a :href="item.link" target="_blank">
-																		<el-image :src="item.src" lazy>
+																		<el-image :src="item.src" lazy fit="contain">
 																			<div slot="error" class="image-slot">
 																				<i class="el-icon-picture-outline"></i>
 																			</div>
@@ -285,6 +285,7 @@
 															</div>
 														</el-card>
 													</div>
+													<br>
 												</div>
 											</div>
 										</div>
