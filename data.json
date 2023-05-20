@@ -110,6 +110,7 @@
 	"chr_img_list": [{
 			"id": 1,
 			"idView": "img/character/01.png",
+			"idDetailView": ["img/character/01.png"],
 			"chrName": "梦之彼七宫（夢ノ彼七宮）",
 			"RMPN": "yu me no ka shi chi mi ya",
 			"chrCV": "？？？",
@@ -124,6 +125,7 @@
 		{
 			"id": 2,
 			"idView": "img/character/02.png",
+			"idDetailView": ["img/character/02.png"],
 			"chrName": "濑户麻美（瀬戸マミ）",
 			"RMPN": "se to ma mi",
 			"chrCV": "？？？",
@@ -152,6 +154,7 @@
 		{
 			"id": 3,
 			"idView": "img/character/03.png",
+			"idDetailView": ["img/character/03.png"],
 			"chrName": "吉田沙梨（吉田さり）",
 			"RMPN": "yo shi da sa ri",
 			"chrCV": "？？？",
@@ -175,6 +178,7 @@
 		{
 			"id": 4,
 			"idView": "img/character/04.png",
+			"idDetailView": ["img/character/04.png"],
 			"chrName": "美树菱（美樹りん）",
 			"RMPN": "mi ki ri n",
 			"chrCV": "？？？",
@@ -192,6 +196,7 @@
 		{
 			"id": 5,
 			"idView": "img/character/05.png",
+			"idDetailView": ["img/character/05.png"],
 			"chrName": "稚名爱纱（椎名あいさ）",
 			"RMPN": "shi i na ai sa",
 			"chrCV": "？？？",
@@ -215,6 +220,7 @@
 		{
 			"id": 6,
 			"idView": "img/character/06.png",
+			"idDetailView": ["img/character/06.png"],
 			"chrName": "香风幸（香風サチ）",
 			"RMPN": "ka fu u sa chi",
 			"chrCV": "？？？",
