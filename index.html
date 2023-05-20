@@ -139,7 +139,7 @@
 							</el-card>
 
 							<div style="min-width: 800px;">
-								<el-card class="box-card current-background">
+								<el-card class="box-card">
 									<div slot="header" class="clearfix">
 										<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
 									</div>
@@ -159,7 +159,7 @@
 																	style="text-align: center;margin:0 auto;"
 																	v-for="item in chr_img_list" :key="item.id">
 																	<el-card class="box-card"
-																		style="background-color: aliceblue;">
+																		style="background-color: rbga(224,255,255,0.8);">
 																		<el-row>
 																			<div>
 																				<el-col :span="12">
@@ -183,16 +183,16 @@
 																						trigger="hover"
 																						:content="item.RMPN">
 																						<span slot="reference"
-																							style="font-size: 14px;">
+																							style="font-size: 16px;">
 																							&nbsp&nbsp{{item.chrName}}
 																						</span>
 																					</el-popover>
 																					<el-popover placement="top-start"
 																						title="角色介绍PV及角色歌" width="200"
 																						trigger="hover"
-																						content="点击按钮前往">
+																						content="点击按钮前往(暂无)">
 																						<span slot="reference"
-																							style="font-size: 12px;">
+																							style="font-size: 14px;">
 																							<i class="el-icon-video-camera" style="color: darkblue;"></i>
 																						</span>
 																					</el-popover>
@@ -331,87 +331,6 @@
 										</div>
 									</el-card>
 								</div>
-
-								<br>
-
-
-
-								<div style="min-width: 800px;">
-									<el-card class="box-card current-background">
-										<div slot="header" class="clearfix">
-											<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
-										</div>
-
-										<div class="text item">
-											<div>
-												<span style="font-size: 20px;">
-													<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
-													<i class="el-icon-info"></i> 请点击图片以查看角色详情。
-												</span>
-												<template>
-													<div class="demo-image__placeholder">
-														<div class="block">
-															<div class="block">
-																<el-carousel height="400px" type="card">
-																	<el-carousel-item
-																		style="text-align: center;margin:0 auto;"
-																		v-for="item in chr_img_list" :key="item.id">
-																		<el-popover placement="top-start"
-																			:title="item.chrName" width="200"
-																			trigger="hover" content="请点击图片以查看角色详情">
-																			<el-image slot="reference"
-																				:src="item.idView"
-																				@click="centerDialogVisible = true,presentID = item.id - 1">
-																				<div slot="error" class="image-slot">
-																					<i
-																						class="el-icon-picture-outline"></i>
-																				</div>
-																			</el-image>
-																		</el-popover>
-																	</el-carousel-item>
-																</el-carousel>
-															</div>
-														</div>
-													</div>
-												</template>
-											</div>
-										</div>
-									</el-card>
-								</div>
-								<br>
-
-								<el-dialog style="min-width: 900px;" title="角色详情" :visible.sync="centerDialogVisible"
-									width="90%" center>
-									<el-row>
-										<el-col :span="8">
-											<div>
-												<el-image style="height: 420px;width: 300px; margin-left: 0px;"
-													:src="chr_img_list[presentID].idView">
-													<div slot="error" class="image-slot">
-														<i class="el-icon-picture-outline"></i>
-													</div>
-												</el-image>
-											</div>
-										</el-col>
-										<el-col :span="16">
-											<div style="margin-top: 30px;margin-right: 10px;">
-												<el-popover placement="top-start" title="罗马音" width="200"
-													trigger="hover" :content="chr_img_list[presentID].RMPN">
-													<span slot="reference"
-														style="font-size: 30px;">{{chr_img_list[presentID].chrName}}
-													</span>
-												</el-popover>
-												<span style="font-size: 20px;">
-													—— CV : {{chr_img_list[presentID].chrCV}}
-												</span>
-												<el-divider></el-divider>
-												<div v-for="line in chr_img_list[presentID].detail">
-													<span style="font-size: 20px;">{{line.content}}</span><br>
-												</div>
-											</div>
-										</el-col>
-									</el-row>
-								</el-dialog>
 
 								<el-card id="note_3" class="box-card">
 									<div slot="header" class="clearfix">
