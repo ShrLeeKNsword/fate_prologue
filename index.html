@@ -23,7 +23,7 @@
 
 
 		<div id="vm"
-			style="max-width: 1400px;margin: 0 auto; text-align: center;box-shadow: 0px 0px -50x 30px gray;background-color: aliceblue;">
+			style="max-width: 1200px;margin: 0 auto; text-align: center;box-shadow: 0px 0px -50x 30px gray;background-color: aliceblue;">
 			<el-card class="box-card" style="text-align: left;">
 				<div style="border-style:solid;border-width:1px;border-color: seashell">
 					<div style=";height: 50px;background-color: midnightblue;padding: 5px 30px 5px 30px;">
@@ -63,7 +63,8 @@
 					<div>
 						<template>
 							<el-carousel height="500px" style="height: 500px;">
-								<el-carousel-item v-for="item in top_img_list" :key="item.id" style=";margin: 0 auto;text-align: center;">
+								<el-carousel-item v-for="item in top_img_list" :key="item.id"
+									style=";margin: 0 auto;text-align: center;">
 									<div style="height: 500px">
 										<el-image :src="item.idView" fit="contain">
 											<div slot="placeholder" class="image-slot">
@@ -71,7 +72,8 @@
 													<span class="loading">
 														<span class="loading-inner"></span>
 													</span>
-													<span style="font-size: 30px;margin-top: 50px;">&nbsp&nbsp努力加载中……</span>
+													<span
+														style="font-size: 30px;margin-top: 50px;">&nbsp&nbsp努力加载中……</span>
 												</div>
 											</div>
 											<div slot="error" class="image-slot">
@@ -94,7 +96,12 @@
 
 									<div class="text item summary"
 										style="margin: 10px 20px 10px 20px;font-size: 20px;text-align: center;line-height: 40px;text-shadow: 0 0 8px white,0 0 8px aliceblue;">
-										<div>
+
+										<div slot="header" class="clearfix" style="text-align: center;">
+											<span style="font-size: 30px;">游戏简介</span>
+										</div>
+										<br>
+										<div class="text item">
 											<strong
 												style="font-size: 30px;">“&nbsp&nbsp&nbsp&nbsp&nbsp</strong>一位名叫蓝原逸的少年，在多年之后重返家乡，<strong
 												style="font-size: 30px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>
@@ -120,17 +127,17 @@
 							</div>
 
 							<el-card class="box-card stripes-background">
-								<div slot="header" class="clearfix">
+								<div slot="header" class="clearfix" style="text-align: center;">
 									<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i>
 										特别声明</span>
 								</div>
 
-								<div class="text item">
+								<div class="text item" style="margin-left: 10%;margin-right: 10%;text-align: center;">
 									<span style="font-size: 20px;">
 										本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联！<br>
 										本作品所有出场角色均已年满18周岁！<br>
 										本作还将在制作完成后开放同人二次创作权限！<br>
-										遵守“知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议”进行许可！<br>
+										本作遵守遵守 知识共享署名-非商业性使用-相同方式共享4.0国际许可协议 进行许可！<br>
 										可免费非商业使用公布的人物立绘和音乐等内容！（但商用仍需另外沟通哦~）<br>
 										希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持！<br>
 									</span>
@@ -140,7 +147,7 @@
 
 							<div style="min-width: 800px;">
 								<el-card class="box-card">
-									<div slot="header" class="clearfix">
+									<div slot="header" class="clearfix" style="text-align: center;">
 										<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
 									</div>
 
@@ -193,10 +200,11 @@
 																						content="点击按钮前往(暂无)">
 																						<span slot="reference"
 																							style="font-size: 14px;">
-																							<i class="el-icon-video-camera" style="color: darkblue;"></i>
+																							<i class="el-icon-video-camera"
+																								style="color: darkblue;"></i>
 																						</span>
 																					</el-popover>
-																					
+
 																					<br>
 																					<span style="font-size: 4px;">
 																						—— CV : {{item.chrCV}}
@@ -222,62 +230,29 @@
 								</el-card>
 							</div>
 
+							<el-card class="box-card puzzle-background">
+								<div slot="header" class="clearfix" style="text-align: center;">
+									<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 最新动态</span>
+								</div>
+
+								<div class="text item" style="text-align: center;margin-left: 20%;margin-right: 20%;">
+									<el-table :data="newsTableData" :default-sort="{prop: 'date', order: 'descending'}"
+										height="200" style="width: 100%">
+										<el-table-column prop="date" label="日期" width="200">
+										</el-table-column>
+										<el-table-column prop="guide" label="摘要">
+										</el-table-column>
+									</el-table>
+									<span style="font-size: 18px;"></span>
+								</div>
+							</el-card>
+
 
 							<div class="text item">
-								<el-card class="box-card line-background">
-									<div slot="header" class="clearfix">
-										<span style="font-size: 30px;"><i class="el-icon-user"></i> STAFF</span>
-									</div>
-
-									<div class="text item">
-
-										<el-row>
-											<el-col :span="12">
-
-												<span>
-													<template>
-														<div class="demo-image__placeholder"
-															style="margin: 8px 10px 10px 10px;">
-															<div class="block">
-																<el-image :src="discribe_scr"
-																	style="box-shadow:5px 3px 5px black;border-radius: 5px 5px 5px 5px;">
-																	<div slot="error" class="image-slot">
-																		<i class="el-icon-picture-outline"></i>
-																	</div>
-																</el-image>
-															</div>
-														</div>
-													</template>
-												</span>
-
-											</el-col>
-											<el-col :span="12" style="padding-left: 60px;padding-right: 5px;">
-												<!--这里插入公告-->
-												<span style="font-size: 25px;"><strong>制作组</strong></span><br>
-												<span style="font-size: 20px;">梦魂社：Dream soul society</span><br>
-												<br>
-												<span style="font-size: 20px;">制作中ing</span><br>
-												星豆まな：pixivID103523<br>
-												sironora：pixivID13000627<br>
-												Azel：pixivID2416323<br>
-												<span style="font-size: 20px;">另外，还有本组主美及其他美术等。</span><br>
-												<span style="font-size: 20px;">未来合作可能：</span><br>
-												しろきもち：pixivID31659436<br>
-												ほし：pixivID1198913<br>
-												塩かずのこ：pixivID4310379<br>
-
-
-
-											</el-col>
-										</el-row>
-
-									</div>
-								</el-card>
-								<br>
 
 								<div>
 									<el-card id="note_2" class="box-card">
-										<div slot="header" class="clearfix">
+										<div slot="header" class="clearfix" style="text-align: center;">
 											<span style="font-size: 30px;"><i class="el-icon-picture-outline-round"></i>
 												画师介绍</span>
 										</div>
@@ -333,40 +308,32 @@
 								</div>
 
 								<el-card id="note_3" class="box-card">
-									<div slot="header" class="clearfix">
+									<div slot="header" class="clearfix" style="text-align: center;">
 										<span style="font-size: 30px;"><i class="el-icon-goods"></i> 敬请期待</span>
 									</div>
 
-									<div class="text item">
+									<div class="text item"
+										style="margin-left: 10%;margin-right: 10%;text-align: center;">
 										<span style="font-size: 20px;">
-											后续会开通众筹渠道。另有特典及订制礼品赠送，还请多多支持。<br>
-											我们绝对会以制作出优秀游戏的初心出发，排除一切困难，力争带给玩家一个美好体验。<br>
-											如果有任何想法可随时联系我们。<br>
-											我们欢迎任何对游戏制作有技术有能力的合作伙伴加入。
+											后续会开通众筹渠道。另有特典及订制礼品赠送，还请多多支持<br>
+											我们绝对会以制作出优秀游戏的初心出发，排除一切困难，力争带给玩家一个美好体验<br>
+											如果有任何想法可随时联系我们<br>
+											我们欢迎任何对游戏制作有技术有能力的合作伙伴加入
 										</span>
 
 									</div>
 								</el-card>
-								<br>
 
-								<el-card class="box-card puzzle-background">
-									<div slot="header" class="clearfix">
-										<span style="font-size: 30px;"><i class="el-icon-postcard"></i> 近期公告</span>
+								<el-card class="box-card">
+									<div slot="header" class="clearfix" style="text-align: center;">
+										<span style="font-size: 30px;"><i class="el-icon-user"></i> 制作成员</span>
 									</div>
 
-									<div class="text item">
-										<el-table :data="newsTableData"
-											:default-sort="{prop: 'date', order: 'descending'}" height="200"
-											style="width: 100%">
-											<el-table-column prop="date" label="日期" width="200">
-											</el-table-column>
-											<el-table-column prop="guide" label="摘要">
-											</el-table-column>
-										</el-table>
-										<span style="font-size: 18px;"></span>
+									<div class="text item" style="text-align: center;">
+										嘿嘿~保密！
 									</div>
 								</el-card>
-								<br>
+
 
 								<el-card class="box-card">
 									<div slot="header" class="clearfix">
@@ -422,23 +389,28 @@
 										</el-row>
 									</div>
 								</el-card>
-								<br>
 
 						</template>
 
-						<div style="background-color: darkgray;padding: 10px 10px 10px 10px;">
+						<div style="background-color: skyblue;padding: 20px 10% 20px 10%;height: 100px;">
 							<div
-								style="text-align:center;border-color=black;padding: 5px 5px 5px 5px;text-shadow: 0 0 8px white,0 0 8px aliceblue;">
-								<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
-										class="lazy-loaded" decoding="async" alt="知识共享许可协议" style="border-width:0"
-										src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
-										data-lazy-type="image"
-										data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"><noscript><img
-											decoding="async" alt="知识共享许可协议" style="border-width:0"
-											src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></noscript></a><br>本作品中所有内容除特别声明外<br>
-								遵守<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-									target="_blank" style="text-decoration:none;">知识共享署名-非商业性使用-相同方式共享
-									4.0 国际许可协议</a>进行许可
+								style="border-color=black;padding: 5px 5px 5px 5px;text-shadow: 0 0 8px white,0 0 8px aliceblue;height: 50px;">
+								<div style="float: left;padding: 8px 15px 5px 5px;">
+									<a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+											class="lazy-loaded" decoding="async" alt="知识共享许可协议" style="border-width:0"
+											src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+											data-lazy-type="image"
+											data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"><noscript><img
+												decoding="async" alt="知识共享许可协议" style="border-width:0"
+												src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></noscript>
+									</a>
+								</div>
+								<div style="float: left;text-align: left;">
+									本作品中所有内容除特别声明外<br>
+									遵守<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+										target="_blank" style="text-decoration:none;">知识共享署名-非商业性使用-相同方式共享
+										4.0 国际许可协议</a>进行许可
+								</div>
 							</div>
 
 						</div>
