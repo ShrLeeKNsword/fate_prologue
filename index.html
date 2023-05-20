@@ -90,7 +90,8 @@
 									<div class="text item summary"
 										style="margin: 10px 20px 10px 20px;font-size: 20px;text-align: center;line-height: 40px;text-shadow: 0 0 8px white,0 0 8px aliceblue;">
 										<div>
-											<strong style="font-size: 30px;">“&nbsp&nbsp&nbsp&nbsp&nbsp</strong>一位名叫蓝原逸的少年，在多年之后重返家乡，<strong
+											<strong
+												style="font-size: 30px;">“&nbsp&nbsp&nbsp&nbsp&nbsp</strong>一位名叫蓝原逸的少年，在多年之后重返家乡，<strong
 												style="font-size: 30px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>
 											<br>
 											转入了小镇唯一的学校，
@@ -112,13 +113,13 @@
 									</div>
 								</el-card>
 							</div>
-							
+
 							<el-card class="box-card stripes-background">
 								<div slot="header" class="clearfix">
 									<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i>
 										特别声明</span>
 								</div>
-							
+
 								<div class="text item">
 									<span style="font-size: 20px;">
 										本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联！<br>
@@ -129,9 +130,79 @@
 										希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持！<br>
 									</span>
 								</div>
-							
+
 							</el-card>
-							
+
+							<div style="min-width: 800px;">
+								<el-card class="box-card current-background">
+									<div slot="header" class="clearfix">
+										<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
+									</div>
+
+									<div class="text item">
+										<div>
+											<span style="font-size: 20px;">
+												<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
+												<i class="el-icon-info"></i> 请点击图片以查看角色详情。
+											</span>
+											<template>
+												<div class="demo-image__placeholder">
+													<div class="block">
+														<div class="block">
+															<el-carousel height="400px" type="card">
+																<el-carousel-item
+																	style="text-align: center;margin:0 auto;"
+																	v-for="item in chr_img_list" :key="item.id">
+																	<el-card class="box-card"
+																		style="background-color: aliceblue;">
+																		<el-row>
+																			<el-col :span="10">
+																				<el-image
+																					style="height: 420px;width: 300px; margin-left: 0px;"
+																					:src="item.idView">
+																					<div slot="error"
+																						class="image-slot">
+																						<i
+																							class="el-icon-picture-outline"></i>
+																					</div>
+																				</el-image>
+																			</el-col>
+																			<el-col :span="14">
+																				<div
+																					style="margin-top: 10%;margin-right: 5px;">
+																					<el-popover placement="top-start"
+																						title="罗马音" width="200"
+																						trigger="hover"
+																						:content="item.RMPN">
+																						<span slot="reference"
+																							style="font-size: 15px;">{{item.chrName}}
+																						</span>
+																					</el-popover>
+																					<br>
+																					<span style="font-size: 8px;">
+																						—— CV : {{item.chrCV}}
+																					</span>
+																					<el-divider></el-divider>
+																					<div v-for="line in item.detail"
+																						style="text-align: left;">
+																						<span
+																							style="font-size: 10px;">{{line.content}}</span><br>
+																					</div>
+																				</div>
+																			</el-col>
+																		</el-row>
+																	</el-card>
+																</el-carousel-item>
+															</el-carousel>
+														</div>
+													</div>
+												</div>
+											</template>
+										</div>
+									</div>
+								</el-card>
+							</div>
+
 
 							<div class="text item">
 								<el-card class="box-card line-background">
@@ -243,50 +314,8 @@
 								</div>
 
 								<br>
-								
-								<div style="min-width: 800px;">
-									<el-card class="box-card current-background">
-										<div slot="header" class="clearfix">
-											<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
-										</div>
-								
-										<div class="text item">
-											<div>
-												<span style="font-size: 20px;">
-													<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
-													<i class="el-icon-info"></i> 请点击图片以查看角色详情。
-												</span>
-												<template>
-													<div class="demo-image__placeholder">
-														<div class="block">
-															<div class="block">
-																<el-carousel height="400px" type="card">
-																	<el-carousel-item
-																		style="text-align: center;margin:0 auto;"
-																		v-for="item in chr_img_list" :key="item.id">
-																		<el-popover placement="top-start"
-																			:title="item.chrName" width="200"
-																			trigger="hover" content="请点击图片以查看角色详情">
-																			<el-image slot="reference"
-																				:src="item.idView"
-																				@click="centerDialogVisible = true,presentID = item.id - 1">
-																				<div slot="error" class="image-slot">
-																					<i
-																						class="el-icon-picture-outline"></i>
-																				</div>
-																			</el-image>
-																		</el-popover>
-																	</el-carousel-item>
-																</el-carousel>
-															</div>
-														</div>
-													</div>
-												</template>
-											</div>
-										</div>
-									</el-card>
-								</div>
-								
+
+
 
 								<div style="min-width: 800px;">
 									<el-card class="box-card current-background">
