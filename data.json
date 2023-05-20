@@ -58,28 +58,6 @@
 		"link": "https://www.pixiv.net/users/103523"
 	}, {
 		"id": 3,
-		"name": "ほし",
-		"pivixid": "1198913",
-		"img": [{
-			"id": 1,
-			"src": "img/painter/ほし/01.png",
-			"link": "https://www.pixiv.net/artworks/80740178"
-		}, {
-			"id": 2,
-			"src": "img/painter/ほし/02.png",
-			"link": "https://www.pixiv.net/artworks/78369890"
-		}, {
-			"id": 3,
-			"src": "img/painter/ほし/03.png",
-			"link": "https://www.pixiv.net/users/1198913"
-		}, {
-			"id": 4,
-			"src": "img/painter/ほし/04.png",
-			"link": "https://www.pixiv.net/users/1198913"
-		}],
-		"link": "https://www.pixiv.net/users/1198913"
-	}, {
-		"id": 4,
 		"name": "Azel",
 		"pivixid": "2416323",
 		"img": [{
@@ -93,7 +71,7 @@
 		}],
 		"link": "https://www.pixiv.net/users/2416323"
 	}, {
-		"id": 5,
+		"id": 4,
 		"name": "しろきもち",
 		"pivixid": "31659436",
 		"img": [{
