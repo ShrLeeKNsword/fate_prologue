@@ -1,6 +1,8 @@
 {
 	"ver_num": "0.0.0",
 	"activeIndex": "1",
+	"summary_background": "morning_background",
+	"index_value": 0,
 	"top_img_list": [{
 			"id": 1,
 			"idView": "img/top_1.png"
@@ -8,19 +10,85 @@
 		{
 			"id": 2,
 			"idView": "img/top_2.png"
-		},
-		{
-			"id": 3,
-			"idView": "img/top_3.png"
-		},
-		{
-			"id": 4,
-			"idView": "img/top_4.png"
 		}
 	],
+	"painters": [{
+		"id": 1,
+		"name": "sironora",
+		"pivixid": "13000627",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/sironora/01.png",
+			"link": "https://www.pixiv.net/artworks/86700206"
+		}, {
+			"id": 2,
+			"src": "img/painter/sironora/02.png",
+			"link": "https://www.pixiv.net/users/13000627"
+		}, {
+			"id": 3,
+			"src": "img/painter/sironora/03.png",
+			"link": "https://www.pixiv.net/users/13000627"
+		}, {
+			"id": 4,
+			"src": "img/painter/sironora/04.png",
+			"link": "https://www.pixiv.net/artworks/106226241"
+		}, {
+			"id": 5,
+			"src": "img/painter/sironora/05.png",
+			"link": "https://www.pixiv.net/artworks/103878909"
+		}, {
+			"id": 6,
+			"src": "img/painter/sironora/06.png",
+			"link": "https://www.pixiv.net/users/13000627"
+		}],
+		"link": "https://www.pixiv.net/users/13000627"
+	}, {
+		"id": 2,
+		"name": "星豆まな",
+		"pivixid": "103523",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/星豆まな/01.png",
+			"link": "https://www.pixiv.net/artworks/92878146"
+		}, {
+			"id": 2,
+			"src": "img/painter/星豆まな/02.png",
+			"link": "https://www.pixiv.net/artworks/99749307"
+		}],
+		"link": "https://www.pixiv.net/users/103523"
+	}, {
+		"id": 3,
+		"name": "Azel",
+		"pivixid": "2416323",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/Azel/01.png",
+			"link": "https://www.pixiv.net/artworks/98107485"
+		}, {
+			"id": 2,
+			"src": "img/painter/Azel/02.png",
+			"link": "https://www.pixiv.net/artworks/103975120"
+		}],
+		"link": "https://www.pixiv.net/users/2416323"
+	}, {
+		"id": 4,
+		"name": "しろきもち",
+		"pivixid": "31659436",
+		"img": [{
+			"id": 1,
+			"src": "img/painter/しろきもち/01.png",
+			"link": "https://www.pixiv.net/users/31659436"
+		}, {
+			"id": 2,
+			"src": "img/painter/しろきもち/02.png",
+			"link": "https://www.pixiv.net/artworks/73054291"
+		}],
+		"link": "https://www.pixiv.net/users/31659436"
+	}],
 	"chr_img_list": [{
 			"id": 1,
 			"idView": "img/character/01.png",
+			"idDetailView": ["img/character/01.png"],
 			"chrName": "梦之彼七宫（夢ノ彼七宮）",
 			"RMPN": "yu me no ka shi chi mi ya",
 			"chrCV": "？？？",
@@ -35,6 +103,7 @@
 		{
 			"id": 2,
 			"idView": "img/character/02.png",
+			"idDetailView": ["img/character/02.png"],
 			"chrName": "濑户麻美（瀬戸マミ）",
 			"RMPN": "se to ma mi",
 			"chrCV": "？？？",
@@ -63,6 +132,7 @@
 		{
 			"id": 3,
 			"idView": "img/character/03.png",
+			"idDetailView": ["img/character/03.png"],
 			"chrName": "吉田沙梨（吉田さり）",
 			"RMPN": "yo shi da sa ri",
 			"chrCV": "？？？",
@@ -86,6 +156,7 @@
 		{
 			"id": 4,
 			"idView": "img/character/04.png",
+			"idDetailView": ["img/character/04.png"],
 			"chrName": "美树菱（美樹りん）",
 			"RMPN": "mi ki ri n",
 			"chrCV": "？？？",
@@ -103,6 +174,7 @@
 		{
 			"id": 5,
 			"idView": "img/character/05.png",
+			"idDetailView": ["img/character/05.png"],
 			"chrName": "稚名爱纱（椎名あいさ）",
 			"RMPN": "shi i na ai sa",
 			"chrCV": "？？？",
@@ -126,6 +198,7 @@
 		{
 			"id": 6,
 			"idView": "img/character/06.png",
+			"idDetailView": ["img/character/06.png"],
 			"chrName": "香风幸（香風サチ）",
 			"RMPN": "ka fu u sa chi",
 			"chrCV": "？？？",
@@ -141,6 +214,21 @@
 			}]
 		}
 	],
+	
+	"newsTableData": [{
+		"date": "2022-05-06",
+		"guide": "网站公告界面施工"
+	}, {
+		"date": "2022-05-06",
+		"guide": "网站主界面完成"
+	}, {
+		"date": "2022-05-14",
+		"guide": "网站维护改造完成"
+	}, {
+		"date": "2022-05-20",
+		"guide": "网站维护改造完成"
+	}],
+		
 	"discribe_scr": "img/discribe.png",
 	"centerDialogVisible": false,
 	"presentID": 0,
