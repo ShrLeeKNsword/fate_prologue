@@ -112,6 +112,26 @@
 									</div>
 								</el-card>
 							</div>
+							
+							<el-card class="box-card stripes-background">
+								<div slot="header" class="clearfix">
+									<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i>
+										特别声明</span>
+								</div>
+							
+								<div class="text item">
+									<span style="font-size: 20px;">
+										本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联！<br>
+										本作品所有出场角色均已年满18周岁！<br>
+										本作还将在制作完成后开放同人二次创作权限！<br>
+										遵守“知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议”进行许可！<br>
+										可免费非商业使用公布的人物立绘和音乐等内容！（但商用仍需另外沟通哦~）<br>
+										希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持！<br>
+									</span>
+								</div>
+							
+							</el-card>
+							
 
 							<div class="text item">
 								<el-card class="box-card line-background">
@@ -162,25 +182,6 @@
 										</el-row>
 
 									</div>
-								</el-card>
-								<br>
-								<el-card class="box-card stripes-background">
-									<div slot="header" class="clearfix">
-										<span style="font-size: 30px;"><i class="el-icon-warning-outline"></i>
-											特别声明</span>
-									</div>
-
-									<div class="text item">
-										<span style="font-size: 20px;">
-											本作品纯属虚构。所有登场人物、地名、设定、世界观等全部为虚构，与现实毫无关联！<br>
-											本作品所有出场角色均已年满18周岁！<br>
-											本作还将在制作完成后开放同人二次创作权限！<br>
-											遵守“知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议”进行许可！<br>
-											可免费非商业使用公布的人物立绘和音乐等内容！（但商用仍需另外沟通哦~）<br>
-											希望能在完成本作以后为大家呈现更多的相关内容和故事，希望大家多多支持！<br>
-										</span>
-									</div>
-
 								</el-card>
 								<br>
 
@@ -242,6 +243,50 @@
 								</div>
 
 								<br>
+								
+								<div style="min-width: 800px;">
+									<el-card class="box-card current-background">
+										<div slot="header" class="clearfix">
+											<span style="font-size: 30px;"><i class="el-icon-user"></i> 人物介绍</span>
+										</div>
+								
+										<div class="text item">
+											<div>
+												<span style="font-size: 20px;">
+													<i class="el-icon-info"></i> 角色介绍PV及角色歌会在之后陆续放出。<br>
+													<i class="el-icon-info"></i> 请点击图片以查看角色详情。
+												</span>
+												<template>
+													<div class="demo-image__placeholder">
+														<div class="block">
+															<div class="block">
+																<el-carousel height="400px" type="card">
+																	<el-carousel-item
+																		style="text-align: center;margin:0 auto;"
+																		v-for="item in chr_img_list" :key="item.id">
+																		<el-popover placement="top-start"
+																			:title="item.chrName" width="200"
+																			trigger="hover" content="请点击图片以查看角色详情">
+																			<el-image slot="reference"
+																				:src="item.idView"
+																				@click="centerDialogVisible = true,presentID = item.id - 1">
+																				<div slot="error" class="image-slot">
+																					<i
+																						class="el-icon-picture-outline"></i>
+																				</div>
+																			</el-image>
+																		</el-popover>
+																	</el-carousel-item>
+																</el-carousel>
+															</div>
+														</div>
+													</div>
+												</template>
+											</div>
+										</div>
+									</el-card>
+								</div>
+								
 
 								<div style="min-width: 800px;">
 									<el-card class="box-card current-background">
