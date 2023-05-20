@@ -32,7 +32,6 @@ function getTimeState() {
 
 getTimeState();
 
-
 var vm = new Vue({
 	el: '#vm',
 	data: data,

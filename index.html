@@ -249,7 +249,6 @@
 
 
 							<div class="text item">
-
 								<div>
 									<el-card id="note_2" class="box-card">
 										<div slot="header" class="clearfix" style="text-align: center;">
@@ -258,49 +257,34 @@
 										</div>
 
 										<div class="text item">
-											<div style="text-align: center;width: 100%;margin: 20px 20px 0px 15%;">
-												<div v-for="painter in painters" :key="painter.id"
-													style="width: 320px;display: flex;">
-
-													<el-row style="min-width: 800px;">
-														<el-col :span="12">
-															<template>
-																<div class="demo-image__placeholder">
-																	<div class="block">
-																		<div class="block">
-																			<el-carousel height="300px" width="320px"
-																				type="card">
-																				<el-carousel-item
-																					v-for="item in painter.img"
-																					:key="item.id">
-																					<a :href="item.link"
-																						target="_blank">
-																						<el-image :src="item.src">
-																							<div slot="error"
-																								class="image-slot">
-																								<i
-																									class="el-icon-picture-outline"></i>
-																						</el-image>
-																					</a>
-																				</el-carousel-item>
-																			</el-carousel>
-																		</div>
-																	</div>
-																</div>
-															</template>
-														</el-col>
-														<el-col :span="12">
-															<div
-																style="text-align: center;margin-left: 30%;margin-top: 20%;margin-bottom: 20%;line-height: 50px;">
-																<span
-																	style="font-size: 40px;">{{painter.name}}</span><br>
-																<span style="font-size: 30px;">PivixID
-																	{{painter.pivixid}}</span><br>
-																<a :href="painter.link" target="_blank"><el-button
-																		type="primary" plain>P站主页</el-button></a>
+											<div style="text-align: center;">
+												<div v-for="painter in painters" :key="painter.id" style="width: 100%;">
+													<div>
+														<el-card class="box-card" style="min-width: 80%;">
+															<div slot="header" class="clearfix"
+																style="text-align: center;">
+																<a :href="painter.link" target="_blank"
+																	style="text-decoration: none">
+																	<span
+																		style="font-size: 30px;">{{painter.name}}</span>
+																	<span>PivixID{{painter.pivixid}}</span>
+																</a>
 															</div>
-														</el-col>
-													</el-row>
+
+															<div class="text item" style="text-align: center;"
+																v-for="item in painter.img" :key="item.id">
+																<div style="float: left;width: 45%;padding: 2.5% 2.5% 2.5% 2.5%;">
+																	<a :href="item.link" target="_blank">
+																		<el-image :src="item.src" lazy>
+																			<div slot="error" class="image-slot">
+																				<i class="el-icon-picture-outline"></i>
+																			</div>
+																		</el-image>
+																	</a>
+																</div>
+															</div>
+														</el-card>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -340,10 +324,15 @@
 							<div style="color: lightyellow;text-align: center;float: unset;">
 								<div>
 									<el-row>
-										<a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><el-button round>主策划QQ</el-button></a>
-										<a target="_blank" href="mailto:2862824043@qq.com"><el-button round>主策划邮箱</el-button></a>
-										<a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=R20jFb406Egm1dTHeff_dmfnZ_40nIi8&noverify=0&group_code=226995538"><el-button round>QQ聊天群</el-button></a>
-										<a target="_blank" href="https://space.bilibili.com/16531901"><el-button round>官方B站主页</el-button></a>
+										<a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=2862824043"><el-button
+												round>主策划QQ</el-button></a>
+										<a target="_blank" href="mailto:2862824043@qq.com"><el-button
+												round>主策划邮箱</el-button></a>
+										<a target="_blank"
+											href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=R20jFb406Egm1dTHeff_dmfnZ_40nIi8&noverify=0&group_code=226995538"><el-button
+												round>QQ聊天群</el-button></a>
+										<a target="_blank" href="https://space.bilibili.com/16531901"><el-button
+												round>官方B站主页</el-button></a>
 									</el-row>
 								</div>
 							</div>
